@@ -73,11 +73,16 @@ a:hover {
   font-size: 2rem;
   cursor: pointer;
   color: #1e1e1e;
-  display: none;
-  display: block; /* Override display: none; for mobile */
+  display: none;       /* Initially hidden */
   width: 35px;
   height: 30px;
-  position: relative; /* For positioning bars */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;   /* Shown on smaller screens */
+  }
 }
 
 .overlay-menu {
