@@ -13,8 +13,8 @@
 </head>
 
 <body>
-
-  <nav class="site-nav">
+<!-- NAVIGATION -->
+<nav class="site-nav">
   <div class="container nav-wrapper">
     <div class="logo-area">
       <a href="index.html">
@@ -29,15 +29,24 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="legal.html">Legal</a></li>
     </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+
+    <!-- Animated Hamburger Button -->
+    <div class="hamburger-menu" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <span class="close-btn" onclick="toggleMenu()">×</span>  </div>
+  </div>
 </nav>
 
+<!-- Fullscreen Overlay Menu -->
 <div id="overlayMenu" class="overlay-menu">
+  <!-- Duplicated Animated Hamburger for Close (X) -->
+  <div class="hamburger-menu is-active overlay-close" id="overlayClose" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html" class="active">About</a></li>
