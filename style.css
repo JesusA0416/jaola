@@ -83,18 +83,19 @@ a:hover {
   height: 100%;
   width: 100%;
   background: rgba(20, 20, 30, 0.97);
-  display: none;
+  display: flex; /* Changed from none to flex */
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Transition both */
   z-index: 9999;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateX(100%); /* Start off-screen */
 }
 
 .overlay-menu.show {
-  display: flex;
   opacity: 1;
+  transform: translateX(0%); /* Slide in */
 }
 
 .overlay-menu .close-btn {
@@ -346,7 +347,7 @@ footer a {
   background: rgba(20, 20, 30, 0.97);
   display: flex; /* Changed from none to flex */
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Transition both */
   z-index: 9999;
   flex-direction: column;
   justify-content: center;
