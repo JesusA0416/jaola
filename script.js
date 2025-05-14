@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Toggle menu
+  const overlay = document.getElementById('overlayMenu');
+  const hamburger = document.getElementById('hamburger');
+  const overlayClose = document.getElementById('overlayClose');
+
   window.toggleMenu = function () {
-    const menu = document.getElementById('overlayMenu');
-    menu.classList.toggle('show');
+    overlay.classList.toggle('show');
+    hamburger.classList.toggle('is-active');
+    overlayClose.classList.toggle('is-active');
   };
 
-  // Fade-in on scroll
   const faders = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
