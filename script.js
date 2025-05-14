@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const overlay = document.getElementById('overlayMenu');
   const hamburger = document.getElementById('hamburger');
   const overlayClose = document.getElementById('overlayClose');
 
   window.toggleMenu = function () {
     overlay.classList.toggle('show');
     hamburger.classList.toggle('is-active');
-    overlayClose.classList.toggle('is-active');
   };
+});
 
   const faders = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
