@@ -82,20 +82,20 @@ a:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  display: flex; /* Changed from none to flex */
+  display: flex;
   background: rgba(20, 20, 30, 0.97);
   opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease; /* Transition both */
+  transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 9999;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(-100%); /* Changed to translateY */
+  transform: translateY(-100%); /* Slide from top */
 }
 
 .overlay-menu.show {
   opacity: 1;
-  transform: translateY(0%); /* Changed to translateY */
+  transform: translateY(0%); /* Slide to normal position */
 }
 
 .overlay-menu .close-btn {
