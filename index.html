@@ -15,31 +15,13 @@
 <body>
 
   <nav class="site-nav">
-    <div class="container nav-wrapper">
-      <div class="logo-area">
-        <a href="index.html">
-          <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
-        </a>
-      </div>
-      <ul class="nav-links desktop-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="roadmap.html">Roadmap</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="legal.html">Legal</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
+  <div class="container nav-wrapper">
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+      </a>
     </div>
-  </nav>
-
-  <div id="overlayMenu" class="overlay-menu">
-    <span class="close-btn" onclick="toggleMenu()">×</span>
-    <ul>
+    <ul class="nav-links desktop-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
@@ -47,7 +29,24 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="legal.html">Legal</a></li>
     </ul>
-  </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <span class="close-btn" onclick="toggleMenu()">×</span>  </div>
+</nav>
+
+<div id="overlayMenu" class="overlay-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="roadmap.html">Roadmap</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="legal.html">Legal</a></li>
+  </ul>
+</div>
   <section class="hero">
     <div class="container">
       <h1>Housing. Health. Heart.</h1>
