@@ -324,3 +324,27 @@ footer a {
   color: #333;
   line-height: 1.5;
 }
+/* --- Scroll fade-in animation --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Overlay menu slide-in --- */
+.overlay-menu {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.overlay-menu.show {
+  transform: translateX(0%);
+  opacity: 1;
+  display: flex;
+}
