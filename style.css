@@ -357,3 +357,38 @@ footer a {
     display: block; /* Show on mobile */
   }
 }
+/* Hamburger menu animation */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1101;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #1e1e1e;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.hamburger-menu.is-active div:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-menu.is-active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.is-active div:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
