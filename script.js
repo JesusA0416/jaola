@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.toggleMenu = function () {
     const menu = document.getElementById('overlayMenu');
     menu.classList.toggle('show');
-    document.querySelector('.hamburger').classList.toggle('change');
   };
 
   // Fade-in on scroll
