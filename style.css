@@ -253,3 +253,48 @@ footer a {
   font-size: 1rem;
   line-height: 1.6;
 }
+/* About page glow + alignment */
+.hero-alt {
+  background: #f1ecfb;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.section-alt, .founder-profile, .certifications {
+  background: #ffffff;
+  padding: 60px 20px;
+}
+
+.mission-alt {
+  background: #f7f7fb;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #6c3fcf;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 6px rgba(108, 63, 207, 0.2);
+}
+
+.subtag {
+  font-size: 1.1rem;
+  max-width: 640px;
+  margin: 0 auto;
+  color: #555;
+}
+
+.founder-profile ul,
+.certifications ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.founder-profile li,
+.certifications li {
+  margin-bottom: 0.5rem;
+  color: #333;
+  line-height: 1.6;
+}
