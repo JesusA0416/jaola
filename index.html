@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="JAOLA: Housing. Health. Heart. Trauma-informed housing and CNA-certified care services.">
   <title>JAOLA – Housing. Health. Heart.</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -12,22 +13,24 @@
   <!-- NAVIGATION -->
   <nav class="site-nav">
     <div class="container nav-wrapper">
-      <div class="logo-area"><a href="index.html"><strong>JAOLA</strong></a></div>
-      <div class="desktop-nav">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="roadmap.html">Roadmap</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="legal.html">Legal</a></li>
-        </ul>
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+        </a>
       </div>
+      <ul class="nav-links desktop-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal.html">Legal</a></li>
+      </ul>
       <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
   </nav>
 
-  <!-- OVERLAY MENU -->
+  <!-- FULLSCREEN OVERLAY MENU -->
   <div id="overlayMenu" class="overlay-menu">
     <span class="close-btn" onclick="toggleMenu()">×</span>
     <ul>
@@ -44,7 +47,7 @@
   <header class="hero">
     <div class="container">
       <h1>Housing. Health. Heart.</h1>
-      <p>Care and coordination for people navigating uncertainty. We provide housing support, health services, and system navigation — grounded in dignity, backed by certification, and built for impact.</p>
+      <p>JAOLA provides trauma-aware care and housing support to individuals, families, and those navigating systems that weren’t built for them.</p>
       <a href="services.html" class="cta-button">Explore Services</a>
     </div>
   </header>
@@ -53,20 +56,18 @@
   <section class="mission" id="why-jaola">
     <div class="container">
       <h2 class="section-title">Why JAOLA?</h2>
-
-      <p>JAOLA isn’t a hotline. It’s not a folder of forgotten referrals. It’s a functioning care and housing service model — built by someone who knows what it feels like to fall through every crack.</p>
-
-      <p>We exist because real people are trying to survive stacked barriers. A lease written in legal jargon. A caseworker who doesn't respond. A family member who needs daily help while paperwork sits untouched. JAOLA was created to meet people at that breaking point — and to offer actual structure in place of chaos.</p>
+      <p>JAOLA isn’t a referral line. It’s a functioning support structure built by someone who knows what being overlooked feels like.</p>
+      <p>We show up when systems say “come back later.” We stay when other agencies disappear. We explain what others gatekeep. And we document everything — so nothing gets lost, and no one gets dismissed.</p>
 
       <ul>
-        <li><strong>Housing clarity, not confusion.</strong> We walk tenants through rental agreements, notices, evictions, and lease terms — with patient, bilingual, trauma-aware explanations.</li>
-        <li><strong>Landlord accountability.</strong> JAOLA manages properties and consults with new landlords to implement equitable, legally sound practices.</li>
-        <li><strong>Forms, notices, and proof — done right.</strong> We draft, organize, and submit housing paperwork with compliance in mind.</li>
-        <li><strong>Care that’s licensed, bounded, and real.</strong> CNA-certified in-home support with clear care plans and consented documentation.</li>
-        <li><strong>Follow-through is built in.</strong> Written next steps, appointment tracking, and support plans. No “we’ll see.”</li>
+        <li><strong>Housing clarity, not confusion.</strong> We walk tenants through rental agreements, notices, evictions, and lease terms with bilingual, trauma-aware explanations.</li>
+        <li><strong>Landlord accountability.</strong> JAOLA manages properties and consults new landlords on ethical practices, documentation, and anti-discrimination compliance.</li>
+        <li><strong>Forms, notices, and proof — done right.</strong> We help draft, complete, and organize housing documents to ensure they're legally sound and court-ready.</li>
+        <li><strong>Care that’s licensed, bounded, and real.</strong> CNA-certified support delivered in-home with clear expectations and documented follow-through.</li>
+        <li><strong>Follow-through is built in.</strong> Clients always leave with next steps, deadlines, and direct contact. There’s no “we’ll get back to you.”</li>
       </ul>
 
-      <p>JAOLA is infrastructure — housing + care + documentation — built to hold what other agencies drop.</p>
+      <p>JAOLA isn’t charity. It’s structural care for people who’ve been left to build everything alone. If you need clarity, care, and consistency — we’re already ready.</p>
     </div>
   </section>
 
@@ -79,13 +80,12 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- SCRIPT -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('overlayMenu');
       menu.classList.toggle('show');
     }
   </script>
-
 </body>
 </html>
