@@ -366,3 +366,22 @@ footer a {
   opacity: 1;
   display: flex;
 }
+.close-btn {
+  font-size: 2rem;
+  color: #1e1e1e;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: none; /* Initially hidden */
+}
+
+.overlay-menu.show + .site-nav .close-btn {
+  display: block; /* Show when menu is open */
+}
+
+@media (max-width: 768px) {
+  .close-btn {
+    display: block; /* Show on mobile */
+  }
+}
