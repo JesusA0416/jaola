@@ -285,3 +285,22 @@ footer a {
   line-height: 1.6;
   color: #333;
 }
+/* --- Bullet Fix (Finalized) --- */
+.info-card ul,
+.mission ul,
+.services-preview ul {
+  list-style-type: disc;
+  margin-left: 0;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-card ul li,
+.mission ul li,
+.services-preview ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
