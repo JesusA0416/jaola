@@ -10,17 +10,24 @@
 <body>
 
   <nav class="site-nav">
-    <div class="container">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="roadmap.html">Roadmap</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="legal.html">Legal</a></li>
-      </ul>
+  <div class="container nav-wrapper">
+    <div class="logo-area">
+      <a href="index.html"><strong>JAOLA</strong></a>
     </div>
-  </nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal.html">Legal</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+  </div>
+</nav>
+
 
   <header class="hero">
     <div class="container">
@@ -50,5 +57,11 @@
       <p>&copy; 2025 JAOLA. All rights reserved.</p>
     </div>
   </footer>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+</script>
 </body>
 </html>
