@@ -99,7 +99,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateX(100%); /* Start off-screen */
+  transition: translateX: 0.4; /* Start off-screen */
 }
 
 .bar1, .bar2, .bar3 {
@@ -110,23 +110,7 @@ a:hover {
   transition: 0.4s; /* Smooth transitions */
 }
 
-/* Rotates first bar */
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-/* Fades out the second bar */
-.change .bar2 {
-  opacity: 0;
-}
-
-/* Rotates last bar */
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-9px, -6px);
-  transform: rotate(45deg) translate(-9px, -6px);
-}
-.overlay-menu.show {
+.overlay-menu.show 
   opacity: 1;
   transform: translateX(0%); /* Slide in */
 }
