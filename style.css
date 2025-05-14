@@ -393,18 +393,54 @@ footer a {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* === OVERLAY MENU === */
+/* === Hamburger Menu (Mobile Only) === */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1101;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #1e1e1e;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.hamburger-menu.is-active div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.is-active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.is-active div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* === Overlay Menu === */
 .overlay-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background: rgba(20, 20, 30, 0.96);
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(20, 20, 30, 0.96);
   opacity: 0;
   transform: translateX(100%);
   transition: transform 0.4s ease, opacity 0.4s ease;
@@ -419,8 +455,8 @@ footer a {
 
 .overlay-menu ul {
   list-style: none;
-  text-align: center;
   padding: 0;
+  text-align: center;
 }
 
 .overlay-menu li {
@@ -432,9 +468,15 @@ footer a {
   color: #f2f0ea;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: color 0.3s ease;
 }
 
-.overlay-menu a:hover {
-  color: #b68cdd;
+/* === MOBILE RESPONSIVE RULES === */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  .desktop-nav {
+    display: none; /* Hide desktop nav on mobile */
+  }
 }
