@@ -74,6 +74,10 @@ a:hover {
   cursor: pointer;
   color: #1e1e1e;
   display: none;
+  display: block; /* Override display: none; for mobile */
+  width: 35px;
+  height: 30px;
+  position: relative; /* For positioning bars */
 }
 
 .overlay-menu {
@@ -82,22 +86,15 @@ a:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  display: flex;
   background: rgba(20, 20, 30, 0.97);
+  display: flex;
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 9999;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(-100%); /* Slide from top */
-}
-.hamburger {
-  display: block; /* Override display: none; for mobile */
-  width: 35px;
-  height: 30px;
-  cursor: pointer;
-  position: relative; /* For positioning bars */
+  transform: translateX(100%); /* Start off-screen */
 }
 
 .bar1, .bar2, .bar3 {
@@ -126,7 +123,7 @@ a:hover {
 }
 .overlay-menu.show {
   opacity: 1;
-  transform: translateY(0%); /* Slide to normal position */
+  transform: translateX(0%); /* Slide in */
 }
 
 .overlay-menu .close-btn {
@@ -370,23 +367,13 @@ footer a {
 
 /* --- Overlay menu slide-in --- */
 .overlay-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(20, 20, 30, 0.97);
-  display: flex; /* Changed from none to flex */
+  transform: translateX(100%);
   opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease; /* Transition both */
-  z-index: 9999;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(100%); /* Start off-screen */
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .overlay-menu.show {
+  transform: translateX(0%);
   opacity: 1;
-  transform: translateX(0%); /* Slide in */
+  display: flex;
 }
