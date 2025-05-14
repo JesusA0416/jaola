@@ -268,3 +268,20 @@ footer a {
     padding: 20px;
   }
 }
+/* --- List Fixes --- */
+.info-card ul,
+.mission ul,
+.services-preview ul {
+  list-style: disc inside;
+  padding-left: 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.info-card ul li,
+.mission ul li,
+.services-preview ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
