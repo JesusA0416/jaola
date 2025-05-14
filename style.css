@@ -338,13 +338,23 @@ footer a {
 
 /* --- Overlay menu slide-in --- */
 .overlay-menu {
-  transform: translateX(100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(20, 20, 30, 0.97);
+  display: flex; /* Changed from none to flex */
   opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%); /* Start off-screen */
 }
 
 .overlay-menu.show {
-  transform: translateX(0%);
   opacity: 1;
-  display: flex;
+  transform: translateX(0%); /* Slide in */
 }
