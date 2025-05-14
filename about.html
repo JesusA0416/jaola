@@ -108,31 +108,29 @@
   </footer>
 
   <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Toggle menu
     function toggleMenu() {
       const menu = document.getElementById('overlayMenu');
       menu.classList.toggle('show');
     }
-    <script>
-  function toggleMenu() {
-    const menu = document.getElementById('overlayMenu');
-    menu.classList.toggle('show');
-  }
+    window.toggleMenu = toggleMenu; // make accessible from HTML onclick
 
-  // Scroll Fade-In Script
-  const faders = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    faders.forEach(fade => {
+      observer.observe(fade);
     });
-  }, { threshold: 0.15 });
-
-  faders.forEach(fade => {
-    observer.observe(fade);
   });
 </script>
-  </script>
 </body>
 </html>
