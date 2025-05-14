@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Menu toggle
-  window.toggleMenu = function () {
-    const menu = document.getElementById('overlayMenu');
-    menu.classList.toggle('show');
-  };
+// Toggle menu
+window.toggleMenu = function () {
+  const menu = document.getElementById('overlayMenu');
+  menu.classList.toggle('show');
+  document.querySelector('.hamburger').classList.toggle('change');
+};
 
-  // Fade-in observer
+document.addEventListener('DOMContentLoaded', function () {
+  // Fade-in on scroll
   const faders = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries, obs) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15 });
