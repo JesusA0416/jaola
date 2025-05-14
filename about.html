@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About JAOLA – Trauma-informed care and housing support, built from experience and expertise.">
+  <title>About JAOLA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <div class="container nav-wrapper">
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+        </a>
+      </div>
+      <ul class="nav-links desktop-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal.html">Legal</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </nav>
+
+  <!-- FULLSCREEN OVERLAY MENU -->
+  <div id="overlayMenu" class="overlay-menu">
+    <span class="close-btn" onclick="toggleMenu()">×</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal.html">Legal</a></li>
+    </ul>
+  </div>
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>About JAOLA</h1>
+      <p>JAOLA is a multidisciplinary support agency specializing in trauma-aware housing services and CNA-certified non-medical care. We serve individuals navigating legal, medical, or systemic instability by offering real structure — not just sympathy.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDER PROFILE -->
+  <section class="founder-profile">
+    <div class="container">
+      <h2>Our Founder</h2>
+      <p>JAOLA was founded by an individual whose personal experience and academic achievements inform the organization’s every decision. With a current 4.0 GPA and dual study in criminal justice and healthcare, the founder brings both lived insight and formal training to the work.</p>
+      <p>Before JAOLA, their background included:</p>
+      <ul>
+        <li>Legal navigation and documentation preparation</li>
+        <li>Hands-on mechanical and technical problem-solving</li>
+        <li>Frontend web development (HTML, CSS, JavaScript, animation)</li>
+        <li>Direct CNA-level care in clinical and home environments</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MISSION STATEMENT -->
+  <section class="mission-statement">
+    <div class="container">
+      <h2>Why JAOLA Was Built</h2>
+      <p>Most systems expect people to already know how to advocate for themselves. JAOLA was created to fill the gap between “good luck” and actual help. We support tenants who’ve never read a lease before. We care for clients who’ve been turned away elsewhere. And we don’t leave people behind after one appointment. Structure matters — and so does staying.</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="certifications">
+    <div class="container">
+      <h2>Certifications & Competencies</h2>
+      <ul>
+        <li>CNA-Certified Home Care Provider (Utah)</li>
+        <li>Criminal Justice academic background (4.0 GPA)</li>
+        <li>Frontend fluency: HTML, CSS, JavaScript</li>
+        <li>Legal writing & rental document preparation</li>
+        <li>Technical and mechanical systems experience</li>
+        <li>Global Seal of Biliteracy in Spanish</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>JAOLA | Housing. Health. Heart.</p>
+      <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | Instagram: <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
+      <p>CNA-Certified | Utah Registered | <a href="legal.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('overlayMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
