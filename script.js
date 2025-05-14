@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-// Toggle menu
-window.toggleMenu = function () {
-  const menu = document.getElementById('overlayMenu');
-  menu.classList.toggle('show');
-  document.querySelector('.hamburger').classList.toggle('change');
-};
+  // Toggle menu
+  window.toggleMenu = function () {
+    const menu = document.getElementById('overlayMenu');
+    menu.classList.toggle('show');
+    document.querySelector('.hamburger').classList.toggle('change');
+  };
 
-document.addEventListener('DOMContentLoaded', function () {
   // Fade-in on scroll
   const faders = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
