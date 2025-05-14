@@ -11,19 +11,25 @@
 
   <!-- NAV -->
   <nav class="site-nav">
-    <div class="container nav-wrapper">
-      <div class="logo-area"><a href="index.html"><strong>JAOLA</strong></a></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="roadmap.html">Roadmap</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="legal.html">Legal</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-    </div>
-  </nav>
+  <div class="container nav-wrapper">
+    <div class="logo-area"><a href="index.html"><strong>JAOLA</strong></a></div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+<!-- Fullscreen overlay menu -->
+<div id="overlayMenu" class="overlay-menu">
+  <span class="close-btn" onclick="toggleMenu()">×</span>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="roadmap.html">Roadmap</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="legal.html">Legal</a></li>
+  </ul>
+</div>
+</nav>
 
   <!-- HERO -->
   <header class="hero">
