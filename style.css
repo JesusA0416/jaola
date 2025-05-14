@@ -1,4 +1,4 @@
-/* --- Reset + Fonts --- */
+/* RESET + BASE */
 * {
   margin: 0;
   padding: 0;
@@ -10,13 +10,18 @@ html, body {
   background-color: #f9f9fb;
   color: #1e1e1e;
   line-height: 1.7;
-  scroll-behavior: smooth;
 }
 
-/* Typography */
+/* CONTAINER */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* TYPOGRAPHY */
 h1, h2, h3 {
   font-family: 'Lora', serif;
-  color: #1e1e1e;
   margin-bottom: 12px;
 }
 
@@ -29,36 +34,26 @@ a:hover {
   color: #4f2a9f;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* --- Navigation --- */
+/* NAVIGATION */
 .site-nav {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background-color: #ffffff;
+  background: #fff;
   border-bottom: 1px solid #e1e1e1;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 .nav-wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 
 .logo-area a {
   font-weight: 800;
   font-size: 1.4rem;
   color: #1e1e1e;
-  text-decoration: none;
 }
 
 .nav-links {
@@ -69,281 +64,50 @@ a:hover {
 
 .nav-links li a {
   font-weight: 600;
-  font-size: 1rem;
-  color: #1e1e1e;
   text-transform: uppercase;
-  transition: 0.3s ease;
+  font-size: 1rem;
 }
 
-.nav-links li a:hover {
-  color: #6c3fcf;
-}
-
-/* Hamburger for mobile */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
-  color: #1e1e1e;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* --- Hero Section --- */
-.hero {
-  background: linear-gradient(135deg, #f2f0fb, #e8e4f5);
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero-logo {
-  max-width: 300px;
-  height: auto;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
-}
-
-.tagline {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #6c3fcf;
-  margin-top: 10px;
-}
-
-.subtag {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 600px;
-  margin: 10px auto 0;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 25px;
-  background: #6c3fcf;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 0 20px rgba(108, 63, 207, 0.25);
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #4f2a9f;
-  color: #fff;
-}
-
-/* --- Section Titles --- */
-.section-title {
-  font-size: 2.2rem;
-  color: #6c3fcf;
-  text-align: center;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #4f2a9f;
-  margin: 12px auto 0;
-  border-radius: 2px;
-}
-
-/* --- Info Cards --- */
-.services-preview .info-card {
-  background: #ffffff;
-  border: 1px solid #e1e1e1;
-  padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
-}
-
-.services-preview .info-card h3 {
-  color: #6c3fcf;
-  margin-bottom: 12px;
-}
-
-.services-preview ul {
-  padding-left: 20px;
-  margin: 10px 0 20px;
-}
-
-.services-preview ul li {
-  margin-bottom: 6px;
-  color: #333;
-}
-
-/* --- Mission Section (Why JAOLA) --- */
-.mission {
-  background: #ffffff;
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 70px 20px;
-}
-
-.mission ul {
-  padding-left: 20px;
-  margin-top: 15px;
-}
-
-.mission ul li {
-  margin-bottom: 6px;
-  color: #444;
-}
-
-/* --- Founder Quote / CTA --- */
-.founder-quote {
-  background: #f3f0fa;
-  padding: 60px 20px;
-  text-align: center;
-  font-style: italic;
-}
-
-.founder-quote p {
-  max-width: 700px;
-  margin: 0 auto 12px;
-  color: #1e1e1e;
-  font-style: normal;
-  font-weight: 500;
-}
-
-/* --- Footer --- */
-footer {
-  background-color: #1e1e1e;
-  color: #f2f0ea;
-  text-align: center;
-  padding: 30px;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #b68cdd;
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #ffffff;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    padding: 15px;
-    border-radius: 8px;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .tagline {
-    font-size: 1.5rem;
-  }
-
-  .subtag {
-    font-size: 1rem;
-  }
-
-  .hero-logo {
-    max-width: 240px;
-  }
-
-  .cta-button {
-    padding: 12px 24px;
-  }
-
-  .services-preview .info-card {
-    padding: 20px;
-  }
-}
-/* --- List Fixes --- */
-.info-card ul,
-.mission ul,
-.services-preview ul {
-  list-style: disc inside;
-  padding-left: 1.5rem;
-  margin: 1rem 0 1.5rem;
-}
-
-.info-card ul li,
-.mission ul li,
-.services-preview ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-}
-/* --- Bullet Fix (Finalized) --- */
-.info-card ul,
-.mission ul,
-.services-preview ul {
-  list-style-type: disc;
-  margin-left: 0;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.info-card ul li,
-.mission ul li,
-.services-preview ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-}
-/* --- WHY JAOLA SECTION BULLETS FIXED --- */
-.mission ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin: 1.2rem 0 2rem;
-}
-
-.mission li {
-  margin-bottom: 1rem;
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-/* --- Hamburger + Overlay Menu --- */
-.hamburger {
   font-size: 2rem;
   cursor: pointer;
   color: #1e1e1e;
+}
+
+.desktop-nav {
   display: block;
 }
 
+/* HAMBURGER FULLSCREEN MENU */
 .overlay-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
-  background: rgba(25, 25, 30, 0.96);
-  z-index: 9999;
+  width: 100%;
+  background: rgba(20, 20, 30, 0.97);
   display: none;
   opacity: 0;
   transition: opacity 0.4s ease;
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay-menu.show {
   display: flex;
   opacity: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+}
+
+.overlay-menu .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 .overlay-menu ul {
@@ -357,7 +121,7 @@ footer a {
 }
 
 .overlay-menu a {
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #f2f0ea;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -368,11 +132,104 @@ footer a {
   color: #b68cdd;
 }
 
-.close-btn {
-  position: absolute;
-  top: 25px;
-  right: 35px;
-  font-size: 3rem;
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #f2f0fb, #e8e4f5);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  color: #6c3fcf;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.cta-button {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 12px 28px;
+  background: #6c3fcf;
   color: #fff;
-  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #4f2a9f;
+}
+
+/* SECTION TITLES */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #6c3fcf;
+  margin-bottom: 30px;
+}
+
+/* MISSION SECTION */
+.mission {
+  background: #ffffff;
+  padding: 60px 20px;
+}
+
+.mission ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.mission li {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  background: #1e1e1e;
+  color: #f2f0ea;
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #b68cdd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+  }
+
+  .overlay-menu a {
+    font-size: 1.5rem;
+  }
 }
