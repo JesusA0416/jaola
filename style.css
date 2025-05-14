@@ -1,4 +1,4 @@
-/* --- Reset + Font Setup --- */
+/* --- Reset + Fonts --- */
 * {
   margin: 0;
   padding: 0;
@@ -7,24 +7,25 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-color: #fdfafa;
-  color: #1c1c1c;
+  background-color: #f9f9fb;
+  color: #1e1e1e;
   line-height: 1.7;
 }
 
+/* Typography */
 h1, h2, h3 {
   font-family: 'Lora', serif;
-  color: #1c1c1c;
+  color: #1e1e1e;
   margin-bottom: 12px;
 }
 
 a {
-  color: #6610f2;
+  color: #6c3fcf;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #4f2a9f;
 }
 
 .container {
@@ -38,8 +39,8 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e1e1;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
 
@@ -53,7 +54,7 @@ a:hover {
 .logo-area a {
   font-weight: 800;
   font-size: 1.4rem;
-  color: #1c1c1c;
+  color: #1e1e1e;
   text-decoration: none;
 }
 
@@ -66,73 +67,71 @@ a:hover {
 .nav-links li a {
   font-weight: 600;
   font-size: 1rem;
-  color: #1c1c1c;
+  color: #1e1e1e;
   text-transform: uppercase;
   transition: 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #ff5c8d;
+  color: #6c3fcf;
 }
 
 /* --- Hamburger (mobile) --- */
 .hamburger {
   display: none;
   font-size: 1.8rem;
+  color: #1e1e1e;
   cursor: pointer;
   user-select: none;
 }
 
-/* --- Hero Section --- */
+/* --- Hero --- */
 .hero {
-  background: linear-gradient(145deg, #6610f2, #ff5c8d);
-  color: #fff;
+  background: linear-gradient(135deg, #f2f0fb, #e8e4f5);
   text-align: center;
   padding: 100px 20px;
 }
 
 .hero-logo {
-  max-width: 320px;
+  max-width: 300px;
   height: auto;
   margin-bottom: 20px;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
 }
 
 .tagline {
   font-size: 1.8rem;
   font-weight: 600;
+  color: #6c3fcf;
   margin-top: 10px;
 }
 
 .subtag {
   font-size: 1.1rem;
-  margin-top: 8px;
+  color: #555;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 10px auto 0;
 }
 
 .cta-button {
   display: inline-block;
   margin-top: 25px;
-  background: #fff;
-  color: #6610f2;
+  background: #6c3fcf;
+  color: #ffffff;
   font-weight: bold;
   padding: 14px 30px;
-  border: 2px solid #fff;
+  border: none;
   border-radius: 6px;
-  box-shadow: 0 0 20px rgba(255, 92, 141, 0.4);
+  box-shadow: 0 0 20px rgba(108, 63, 207, 0.25);
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #2f00b2;
+  background: #4f2a9f;
   color: #fff;
-  border-color: #2f00b2;
-  box-shadow: 0 0 25px rgba(47, 0, 178, 0.6);
 }
 
-/* --- Quick Features Section --- */
+/* --- Quick Features --- */
 .quick-features .grid {
   display: flex;
   flex-wrap: wrap;
@@ -143,23 +142,23 @@ a:hover {
 
 .icon-block {
   flex: 1 1 calc(33% - 30px);
-  background: #fff;
-  border: 1px solid #eee;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
 .icon-block h3 {
-  color: #6610f2;
+  color: #6c3fcf;
   margin-bottom: 10px;
 }
 
-/* --- Section Titles --- */
+/* Section Titles */
 .section-title {
   font-size: 2.2rem;
-  color: #6610f2;
+  color: #6c3fcf;
   text-align: center;
   margin-bottom: 40px;
   position: relative;
@@ -170,7 +169,7 @@ a:hover {
   display: block;
   width: 60px;
   height: 4px;
-  background: #ff5c8d;
+  background: #4f2a9f;
   margin: 12px auto 0;
   border-radius: 2px;
 }
@@ -178,8 +177,8 @@ a:hover {
 /* --- Mission Section --- */
 .mission {
   background: #ffffff;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
   padding: 70px 0;
   text-align: center;
 }
@@ -194,26 +193,26 @@ a:hover {
 
 .info-card {
   flex: 1 1 calc(33% - 30px);
-  background: #fff;
-  border: 1px solid #eee;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-  transition: 0.3s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
 }
 
 .info-card:hover {
-  box-shadow: 0 6px 24px rgba(102, 16, 242, 0.1);
+  box-shadow: 0 6px 24px rgba(108, 63, 207, 0.12);
 }
 
 .info-card h3 {
-  color: #6610f2;
+  color: #6c3fcf;
   margin-bottom: 12px;
 }
 
-/* --- Founder Quote Section --- */
+/* --- Founder Quote --- */
 .founder-quote {
-  background: #f8f4ff;
+  background: #f3f0fa;
   padding: 60px 0;
   text-align: center;
   font-style: italic;
@@ -222,23 +221,23 @@ a:hover {
 .quote-by {
   margin-top: 10px;
   font-weight: 600;
-  color: #1c1c1c;
+  color: #1e1e1e;
 }
 
 /* --- Footer --- */
 footer {
-  background-color: #1c1c1c;
-  color: #eee;
+  background-color: #1e1e1e;
+  color: #f2f0ea;
   text-align: center;
   padding: 30px;
   font-size: 0.9rem;
 }
 
 footer a {
-  color: #ff5c8d;
+  color: #b68cdd;
 }
 
-/* --- Responsive Mobile Styles --- */
+/* --- Responsive Styles --- */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -247,8 +246,8 @@ footer a {
     top: 70px;
     right: 20px;
     background: #ffffff;
-    border: 1px solid #eee;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     padding: 15px;
     border-radius: 8px;
   }
@@ -272,7 +271,7 @@ footer a {
   }
 
   .tagline {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .subtag {
@@ -280,7 +279,7 @@ footer a {
   }
 
   .hero-logo {
-    max-width: 260px;
+    max-width: 240px;
   }
 
   .cta-button {
