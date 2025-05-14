@@ -69,81 +69,53 @@ a:hover {
 }
 
 /* FULLSCREEN OVERLAY MENU */
-.hamburger {
-  font-size: 2rem;
-  cursor: pointer;
-  color: #1e1e1e;
-  display: none;       /* Initially hidden */
-  width: 35px;
-  height: 30px;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;   /* Shown on smaller screens */
-  }
-}
-
-.overlay-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(20, 20, 30, 0.97);
-  display: flex;
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  z-index: 9999;
+.hamburger-menu {
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: translateX: 0.4; /* Start off-screen */
-}
-
-.bar1, .bar2, .bar3 {
-  width: 100%;
-  height: 4px;
-  background-color: #1e1e1e;
-  margin: 6px 0;
-  transition: 0.4s; /* Smooth transitions */
-}
-
-.overlay-menu.show 
-  opacity: 1;
-  transform: translateX(0%); /* Slide in */
-}
-
-.overlay-menu .close-btn {
-  position: absolute;
-  top: 30px;
-  right: 35px;
-  font-size: 3rem;
-  color: #fff;
+  gap: 4px;
+  width: 45px;
+  height: 50px;
+  z-index: 1100;
+  position: fixed;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
 }
 
-.overlay-menu ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #1e1e1e;
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.overlay-menu li {
-  margin: 20px 0;
+.hamburger-menu.is-active div:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
 }
 
-.overlay-menu a {
-  font-size: 2rem;
-  color: #f2f0ea;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+.hamburger-menu.is-active div:nth-child(2) {
+  opacity: 0;
 }
 
-.overlay-menu a:hover {
-  color: #b68cdd;
+.hamburger-menu.is-active div:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.overlay-close div {
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
 }
 
 /* HERO */
