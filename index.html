@@ -9,59 +9,101 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="site-nav">
-  <div class="container nav-wrapper">
-    <div class="logo-area">
-      <a href="index.html"><strong>JAOLA</strong></a>
+    <div class="container nav-wrapper">
+      <div class="logo-area"><a href="index.html"><strong>JAOLA</strong></a></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal.html">Legal</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="roadmap.html">Roadmap</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="legal.html">Legal</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      ☰
-    </div>
-  </div>
-</nav>
+  </nav>
 
-
+  <!-- Hero -->
   <header class="hero">
     <div class="container">
       <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="hero-logo" />
-      <p>Housing. Health. Heart.</p>
-      <a href="services.html" class="cta-button">View Services</a>
+      <p class="tagline">Housing. Health. Heart.</p>
+      <p class="subtag">Changing the way communities access stability and care — one service at a time.</p>
+      <a href="services.html" class="cta-button">Explore Services</a>
     </div>
   </header>
 
-  <section class="about">
-    <div class="container">
-      <h2 class="section-title">What is JAOLA?</h2>
-      <p>JAOLA is a Utah-based care and housing startup founded to challenge how systems serve the most vulnerable. We're not just a business — we're a blueprint for a better model of dignity, safety, and sustainability.</p>
-      <p>We operate at the intersection of housing access, home health, and community empowerment — while developing our legal, medical, and real estate infrastructure for long-term expansion.</p>
+  <!-- Quick Icons -->
+  <section class="quick-features">
+    <div class="container grid">
+      <div class="icon-block">
+        <h3>🏠 Housing Help</h3>
+        <p>Tenant coordination, lease prep, rental navigation.</p>
+      </div>
+      <div class="icon-block">
+        <h3>🩺 Health Services</h3>
+        <p>CNA-certified personal care, home visits, wellness checks.</p>
+      </div>
+      <div class="icon-block">
+        <h3>📞 Community Access</h3>
+        <p>For the people falling through the cracks. You’re not alone.</p>
+      </div>
     </div>
   </section>
 
+  <!-- Mission -->
   <section class="mission">
     <div class="container">
-      <h2 class="section-title">Our Mission</h2>
-      <p>To build spaces — physical and emotional — where people feel safe, seen, and supported. Whether it’s overseeing a rental property, helping someone navigate care options, or designing future wellness housing — JAOLA stands for accountability, stability, and heart-led action.</p>
+      <h2 class="section-title">Why JAOLA?</h2>
+      <p>We’re not just managing properties or offering care — we’re rebuilding trust in the systems that were supposed to protect us. JAOLA is for the overlooked, the overworked, and the ones who need support that’s both structured and real.</p>
     </div>
   </section>
 
+  <!-- Services Preview -->
+  <section class="services-preview">
+    <div class="container">
+      <h2 class="section-title">What We Offer</h2>
+      <div class="grid">
+        <div class="info-card">
+          <h3>Property Oversight</h3>
+          <p>We handle internal family-owned properties and consult on rental processes with care and compliance.</p>
+        </div>
+        <div class="info-card">
+          <h3>Care Navigation</h3>
+          <p>Whether it’s helping with meds, hygiene, or forms — we show up for those who need daily support.</p>
+        </div>
+        <div class="info-card">
+          <h3>Tenant Support</h3>
+          <p>Lease coaching, notice prep, documentation walk-throughs — explained with empathy, not confusion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Quote -->
+  <section class="founder-quote">
+    <div class="container">
+      <p>"I built JAOLA because I got tired of watching people fall through cracks that weren’t their fault."</p>
+      <p class="quote-by">– Jesús Lopez Aguilar, Founder</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 JAOLA. All rights reserved.</p>
+      <p>© 2025 JAOLA | <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
     </div>
   </footer>
+
+  <!-- Mobile Nav Toggle Script -->
   <script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('show');
-  }
-</script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+  </script>
+
 </body>
 </html>
