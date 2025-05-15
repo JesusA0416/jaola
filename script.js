@@ -44,3 +44,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
 });
+// Fade-in on scroll
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+});
+// Automatically apply fade to all sections
+document.querySelectorAll('section').forEach(el => {
+  el.classList.add('fade-in-section');
+  observer.observe(el);
+});
