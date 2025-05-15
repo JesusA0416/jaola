@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
 const c = document.getElementById('heartCanvas');
 const a = c.getContext('2d');
 let e = [], h = [];
-let O = c.width = innerWidth;
-let Q = c.height = 400;
+let O = c.width;
+let Q = c.height;
 
 let v = 32, M = Math, R = M.random, C = M.cos, Y = 6.3;
 for (let i = 0; i < Y; i += .2) {
