@@ -39,3 +39,4 @@ document.addEventListener('DOMContentLoaded', function () {
     card.classList.add('fade-in-section');
     observer.observe(card);
   });
+});
