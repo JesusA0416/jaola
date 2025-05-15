@@ -4,16 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="About JAOLA – Professional, trauma-aware housing and care solutions built with academic and real-world credibility.">
+  <meta name="description" content="About JAOLA – Professional, trauma-aware housing and care solutions built with academic and real-world credibility.">
   <title>About JAOLA</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-
+  <!-- NAVIGATION -->
   <nav class="site-nav">
     <div class="container nav-wrapper">
       <div class="logo-area">
@@ -29,16 +27,11 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="legal.html">Legal</a></li>
       </ul>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
     </div>
   </nav>
 
+  <!-- OVERLAY MENU -->
   <div id="overlayMenu" class="overlay-menu">
-    <span class="close-btn" onclick="toggleMenu()">×</span>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
@@ -49,21 +42,26 @@
     </ul>
   </div>
 
-  <section class="hero-alt">
+  <!-- HAMBURGER BUTTON -->
+  <div class="hamburger-menu" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-alt fade-in-section">
     <div class="container">
       <h1 class="section-title glow">About JAOLA</h1>
-      <p>JAOLA is a multidisciplinary support agency specializing in trauma-aware housing services and non-medical
-        in-home care. Founded to bridge the critical gap between structural systems and underserved individuals, JAOLA
-        operates at the intersection of healthcare, housing, legal navigation, and digital communication.</p>
+      <p>JAOLA is a multidisciplinary support agency specializing in trauma-aware housing services and non-medical in-home care. Founded to bridge the critical gap between structural systems and underserved individuals, JAOLA operates at the intersection of healthcare, housing, legal navigation, and digital communication.</p>
     </div>
   </section>
 
-  <section class="founder-profile">
+  <!-- FOUNDER PROFILE -->
+  <section class="founder-profile fade-in-section">
     <div class="container">
       <h2 class="section-title">Our Founder</h2>
-      <p>JAOLA was established by an individual who brings an unmatched blend of academic excellence and hands-on
-        experience to the field. With a current 4.0 GPA, the founder is formally educated in both criminal justice and
-        healthcare, while also self-taught in multiple technical and mechanical domains.</p>
+      <p>JAOLA was established by an individual who brings an unmatched blend of academic excellence and hands-on experience to the field. With a current 4.0 GPA, the founder is formally educated in both criminal justice and healthcare, while also self-taught in multiple technical and mechanical domains.</p>
       <div class="card-grid">
         <div class="info-card">
           <h3>Legal Navigation</h3>
@@ -75,30 +73,27 @@
         </div>
         <div class="info-card">
           <h3>Frontend Web Dev</h3>
-          <p>Fluent in HTML, CSS, JavaScript, and animation libraries — designed JAOLA’s entire web infrastructure from
-            scratch.</p>
+          <p>Fluent in HTML, CSS, JavaScript, and animation libraries — designed JAOLA’s entire web infrastructure from scratch.</p>
         </div>
         <div class="info-card">
           <h3>Healthcare & CNA</h3>
-          <p>Licensed CNA with field work in home care and clinical support — documentation, hygiene, mobility & med
-            compliance.</p>
+          <p>Licensed CNA with field work in home care and clinical support — documentation, hygiene, mobility & med compliance.</p>
         </div>
-        <p>This multifaceted foundation allows JAOLA to operate as more than just a service — it’s an agency that
-          anticipates obstacles before they arise and delivers care with both precision and empathy.</p>
       </div>
+      <p>This multifaceted foundation allows JAOLA to operate as more than just a service — it’s an agency that anticipates obstacles before they arise and delivers care with both precision and empathy.</p>
     </div>
   </section>
 
-  <section class="mission-alt">
+  <!-- MISSION SECTION -->
+  <section class="mission-alt fade-in-section">
     <div class="container">
       <h2 class="section-title glow">Why JAOLA Exists</h2>
-      <p>Most systems require perfection before they offer support. JAOLA was built to intervene before people get
-        denied, dropped, or dismissed. Our mission is rooted in accountability, clarity, and care — and our founder
-        ensures that every client interaction is backed by real documentation, trauma-awareness, and structural skill.</p>
+      <p>Most systems require perfection before they offer support. JAOLA was built to intervene before people get denied, dropped, or dismissed. Our mission is rooted in accountability, clarity, and care — and our founder ensures that every client interaction is backed by real documentation, trauma-awareness, and structural skill.</p>
     </div>
   </section>
 
-  <section class="certifications">
+  <!-- CERTIFICATIONS -->
+  <section class="certifications fade-in-section">
     <div class="container">
       <h2 class="section-title">Certifications & Competencies</h2>
       <ul>
@@ -111,11 +106,11 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>JAOLA | Housing. Health. Heart.</p>
-      <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | Instagram: <a
-          href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
+      <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | Instagram: <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
       <p>CNA-Certified | Utah Registered | <a href="legal.html">Privacy Policy</a></p>
     </div>
   </footer>
