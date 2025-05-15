@@ -50,10 +50,10 @@ function initHeartCanvas() {
   const M = Math, R = M.random, C = M.cos, Y = 6.3;
 
   function resizeCanvas() {
-    width = canvas.clientWidth;
-    height = canvas.clientHeight;
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    width = canvas.width;
+    height = canvas.height
     trails = [];
     heartPath = [];
 
