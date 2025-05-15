@@ -294,4 +294,38 @@ footer a {
   opacity: 1;
   transform: translateY(0);
 }
+.heart-animation {
+  width: 100px;
+  height: 90px;
+  position: relative;
+  margin: 40px auto;
+  transform: scale(1);
+  animation: pulse 1.2s infinite ease-in-out;
+}
 
+.heart-animation::before,
+.heart-animation::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: #e63946;
+  border-radius: 50%;
+}
+
+.heart-animation::before {
+  left: 50px;
+}
+
+.heart-animation::after {
+  top: 50px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
