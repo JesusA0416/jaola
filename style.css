@@ -294,3 +294,12 @@ footer a {
   opacity: 1;
   transform: translateY(0);
 }
+#heartCanvas {
+  display: block;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background: black;
+  border-radius: 10px;
+}
