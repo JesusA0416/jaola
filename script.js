@@ -140,4 +140,7 @@ function initHeartCanvas() {
   loop();
 }
 
-document.addEventListener('DOMContentLoaded', initHeartCanvas);
+// Run once, after page fully loads
+document.addEventListener('DOMContentLoaded', () => {
+  initHeartCanvas();
+});
