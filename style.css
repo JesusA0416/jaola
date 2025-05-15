@@ -312,5 +312,7 @@ section {
   max-width: 640px;
   margin: 0 auto;
   color: #555;
-  margin-bottom: 40px; /* Add this line */
+  margin-top: 10px;
+  margin-bottom: 60px; /* This is the key */
+  text-align: center;
 }
