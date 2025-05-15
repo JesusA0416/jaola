@@ -195,7 +195,7 @@ a:hover {
   font-weight: bold;
   border-radius: 6px;
   transition: background 0.3s ease;
-  text-align: center;
+  text-align: center !importrant;
 }
 
 .cta-button:hover {
