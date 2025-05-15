@@ -354,3 +354,24 @@ section {
   padding: 0 !important;
   margin: 0 auto;
 }
+.site-footer {
+  background-color: #1e1e1e;
+  color: #f2f0ea;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 10px 0;
+}
+
+.site-footer a {
+  color: #b68cdd;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
