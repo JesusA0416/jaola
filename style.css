@@ -336,3 +336,14 @@ footer a {
   height: 100%;
   display: block;
 }
+@media (max-width: 768px) {
+  .heart-wrapper {
+    height: 300px;
+    padding: 0;
+  }
+
+  #heartCanvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
