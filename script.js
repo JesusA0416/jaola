@@ -40,104 +40,94 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(card);
   });
 });
-const canvas = document.getElementById('heartCanvas');
-if (canvas) {
+function initHeartCanvas() {
+  const canvas = document.getElementById('heartCanvas');
+  if (!canvas) return;
+
   const ctx = canvas.getContext('2d');
+  let width, height, trails = [], heartPath = [];
+  const v = 32;
+  const M = Math, R = M.random, C = M.cos, Y = 6.3;
 
   function resizeCanvas() {
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
-  }
+    width = canvas.clientWidth;
+    height = canvas.clientHeight;
+    canvas.width = width;
+    canvas.height = height;
+    trails = [];
+    heartPath = [];
 
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  const O = canvas.width;
-  const Q = canvas.height;
-  const M = Math;
-  const R = M.random;
-  const C = M.cos;
-  const Y = 6.3;
-  const v = 32;
-
-  let h = [], e = [];
-
-  for (let i = 0; i < Y; i += 0.2) {
-    h.push([
-      O / 2 + 180 * M.pow(M.sin(i), 3),
-      Q / 2 + 10 * (-(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i)))
-    ]);
-  }
-
-  for (let i = 0; i < v; i++) {
-    let x = R() * O;
-    let y = R() * Q;
-    let H = i / v * 80 + 280;
-    let S = R() * 40 + 60;
-    let B = R() * 60 + 20;
-    let f = [];
-
-    for (let k = 0; k < v; k++) {
-      f[k] = {
-        x: x,
-        y: y,
-        X: 0,
-        Y: 0,
-        R: (1 - k / v) + 1,
-        S: R() + 1,
-        q: ~~(R() * v),
-        D: i % 2 * 2 - 1,
-        F: R() * .2 + .7,
-        f: `hsla(${~~H},${~~S}%,${~~B}%,.1)`
-      };
+    for (let i = 0; i < Y; i += 0.2) {
+      heartPath.push([
+        width / 2 + 180 * M.pow(M.sin(i), 3) * (width / 1000),
+        height / 2 + 10 * (-(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i))) * (height / 600)
+      ]);
     }
-    e[i] = f;
+
+    for (let i = 0; i < v; i++) {
+      const x = R() * width;
+      const y = R() * height;
+      const H = i / v * 80 + 280;
+      const S = R() * 40 + 60;
+      const B = R() * 60 + 20;
+      const f = [];
+
+      for (let k = 0; k < v; k++) {
+        f[k] = {
+          x, y,
+          X: 0, Y: 0,
+          R: (1 - k / v) + 1,
+          S: R() + 1,
+          q: ~~(R() * v),
+          D: i % 2 * 2 - 1,
+          F: R() * 0.2 + 0.7,
+          f: `hsla(${~~H},${~~S}%,${~~B}%,.1)`
+        };
+      }
+      trails[i] = f;
+    }
   }
 
-  function render(_) {
-    ctx.fillStyle = _.f;
+  function render(p) {
+    ctx.fillStyle = p.f;
     ctx.beginPath();
-    ctx.arc(_.x, _.y, _.R, 0, Y, 1);
-    ctx.closePath();
+    ctx.arc(p.x, p.y, p.R, 0, Y);
     ctx.fill();
   }
 
   function loop() {
     ctx.fillStyle = "rgba(0,0,0,.2)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, width, height);
 
     for (let i = 0; i < v; i++) {
-      const f = e[i];
+      const f = trails[i];
       const u = f[0];
-      const q = h[u.q];
-      const D = u.x - q[0];
-      const E = u.y - q[1];
-      const G = M.sqrt(D * D + E * E);
+      const q = heartPath[u.q];
+      const dx = u.x - q[0], dy = u.y - q[1];
+      const dist = M.sqrt(dx * dx + dy * dy);
 
-      if (G < 10) {
-        if (R() > .95) {
+      if (dist < 10) {
+        if (R() > 0.95) {
           u.q = ~~(R() * v);
         } else {
-          if (R() > .99) u.D *= -1;
-          u.q += u.D;
-          u.q %= v;
-          if (u.q < 0) u.q += v;
+          if (R() > 0.99) u.D *= -1;
+          u.q = (u.q + u.D + v) % v;
         }
       }
 
-      u.X += -D / G * u.S;
-      u.Y += -E / G * u.S;
+      u.X += -dx / dist * u.S;
+      u.Y += -dy / dist * u.S;
       u.x += u.X;
       u.y += u.Y;
       render(u);
       u.X *= u.F;
       u.Y *= u.F;
 
-      for (let k = 0; k < v - 1; k++) {
-        const T = f[k];
-        const N = f[k + 1];
-        N.x -= (N.x - T.x) * .7;
-        N.y -= (N.y - T.y) * .7;
+      for (let k = 1; k < v; k++) {
+        const T = f[k - 1];
+        const N = f[k];
+        N.x -= (N.x - T.x) * 0.7;
+        N.y -= (N.y - T.y) * 0.7;
         render(N);
       }
     }
@@ -145,5 +135,9 @@ if (canvas) {
     requestAnimationFrame(loop);
   }
 
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
   loop();
 }
+
+document.addEventListener('DOMContentLoaded', initHeartCanvas);
