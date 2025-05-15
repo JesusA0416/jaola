@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact JAOLA – Reach out for trauma-aware housing or home care support.">
+  <title>Contact – JAOLA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="site-nav">
+  <div class="container nav-wrapper">
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+      </a>
+    </div>
+    <ul class="nav-links desktop-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="legal.html">Legal</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- OVERLAY MENU -->
+<div id="overlayMenu" class="overlay-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="roadmap.html">Roadmap</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="legal.html">Legal</a></li>
+  </ul>
+</div>
+
+<!-- HAMBURGER -->
+<div class="hamburger-menu" id="hamburger">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<!-- HERO -->
+<section class="hero-alt fade-in-section">
+  <div class="container">
+    <h1 class="section-title">Reach Out. We're Listening.</h1>
+    <p class="subtag">JAOLA responds to every message — no bots, no delay, no shame. If you're not sure how to ask, just say that. We'll meet you where you're at.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="fade-in-section">
+  <div class="container" style="display: grid; gap: 40px; grid-template-columns: 1fr 1fr; align-items: start;">
+
+    <!-- Contact Info -->
+    <div>
+      <h2 class="section-title">Contact Information</h2>
+      <p><strong>Email:</strong> <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
+      <p><strong>Service Area:</strong> Utah-based, remote support available nationwide</p>
+      <p><strong>Hours:</strong> M–F, 9am–6pm MT (evening hours case-by-case)</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div>
+      <h2 class="section-title">Send a Message</h2>
+      <form action="mailto:jaolacare@gmail.com" method="POST" enctype="text/plain">
+        <label for="name">Your Name</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Your Email</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">How can we help?</label><br>
+        <textarea id="message" name="message" rows="6" required></textarea><br><br>
+
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>JAOLA | Housing. Health. Heart.</p>
+    <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | Instagram: <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
+    <p>CNA-Certified | Utah Registered | <a href="legal.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
