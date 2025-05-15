@@ -295,25 +295,28 @@ footer a {
   opacity: 1;
   transform: translateY(0);
 }
-.custom-animation-demo {
-  background-color: #ffffff; /* Keep section light */
-  color: #1e1e1e;
-  padding: 80px;
+.heart-demo-section {
+  background-color: #0c0c0c;
+  color: white;
+  padding: 100px 20px;
   text-align: center;
 }
 
 .heart-canvas-wrapper {
-  margin: 40px auto 0;
-  padding: 20px;
-  background-color: #000000; /* Only this is black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 1000px;
   border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255, 0, 100, 0.25);
-  max-width: 900px;
+  background-color: black;
+  box-shadow: 0 0 40px rgba(255, 0, 100, 0.25);
   overflow: hidden;
 }
 
 #heartCanvas {
-  display: block;
-  width: 100;
+  width: 100%;
   height: auto;
+  max-height: 600px;
+  display: block;
 }
