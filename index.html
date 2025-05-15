@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="JAOLA: Housing. Health. Heart. Trauma-informed housing and CNA-certified care services.">
+  <meta name="description" content="JAOLA: Housing. Health. Heart. Trauma-informed housing and CNA-certified care services.">
   <title>JAOLA – Housing. Health. Heart.</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-<!-- NAV -->
-<nav class="site-nav">
-  <div class="container nav-wrapper">
-    <div class="logo-area">
-      <a href="index.html">
-        <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
-      </a>
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="container nav-wrapper">
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+        </a>
+      </div>
+      <ul class="nav-links desktop-nav">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal.html">Legal</a></li>
+      </ul>
     </div>
-    <ul class="nav-links desktop-nav">
-      <li><a href="index.html">Home</a></li>
+  </nav>
+
+  <!-- OVERLAY MENU -->
+  <div id="overlayMenu" class="overlay-menu">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="roadmap.html">Roadmap</a></li>
@@ -30,52 +40,44 @@
       <li><a href="legal.html">Legal</a></li>
     </ul>
   </div>
-</nav>
 
-<!-- OVERLAY MENU -->
-<div id="overlayMenu" class="overlay-menu">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="roadmap.html">Roadmap</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="legal.html">Legal</a></li>
-  </ul>
-</div>
+  <!-- HAMBURGER -->
+  <div class="hamburger-menu" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-<!-- ✅ HAMBURGER BUTTON LAST — ON TOP OF EVERYTHING -->
-<div class="hamburger-menu" id="hamburger">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-  <section class="hero">
+  <!-- HERO -->
+  <section class="hero fade-in-section">
     <div class="container">
       <h1>Housing. Health. Heart.</h1>
       <p>JAOLA provides trauma-aware care and housing support to individuals, families, and those navigating systems that weren’t built for them.</p>
       <a href="services.html" class="cta-button">Explore Services</a>
     </div>
   </section>
-  <section class="services-preview">
-    	<div class="container">
-      	<h2 class="section-title">What We Offer</h2>
-      	<div class="info-card">
+
+  <!-- SERVICES -->
+  <section class="services-preview fade-in-section">
+    <div class="container">
+      <h2 class="section-title">What We Offer</h2>
+      <div class="info-card fade-in-section">
         <h3>Housing Support</h3>
         <p>We help tenants understand leases, respond to notices, prepare eviction paperwork, and navigate housing programs with clarity and confidence.</p>
-      	</div>
-      	<div class="info-card">
+      </div>
+      <div class="info-card fade-in-section">
         <h3>Property Management</h3>
         <p>JAOLA manages internal units and consults new landlords on trauma-aware, compliance-ready rental policies.</p>
-      	</div>
-      <div class="info-card">
+      </div>
+      <div class="info-card fade-in-section">
         <h3>In-Home CNA Care</h3>
         <p>We provide certified, non-medical in-home support — including hygiene care, med reminders, companionship, and transitional planning.</p>
       </div>
     </div>
   </section>
 
-  <section class="who-we-serve">
+  <!-- WHO WE SERVE -->
+  <section class="who-we-serve fade-in-section">
     <div class="container">
       <h2 class="section-title">Who We Serve</h2>
       <ul>
@@ -89,17 +91,15 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>JAOLA | Housing. Health. Heart.</p>
-      <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | Instagram: <a
-          href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
+      <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | Instagram: <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
       <p>CNA-Certified | Utah Registered | <a href="legal.html">Privacy Policy</a></p>
     </div>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
-
 </html>
