@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,89 +9,104 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://tally.so/widgets/embed.js" defer></script>
- </head>
+</head>
 
 <body>
 
-<!-- NAVIGATION -->
-   <nav class="site-nav">
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
     <div class="container nav-wrapper">
-     <div class="logo-area">
-      <a href="index.html">
-      <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
-      </a>
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+        </a>
       </div>
       <ul class="nav-links desktop-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="legal.html">Legal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- OVERLAY MENU -->
+  <div id="overlayMenu" class="overlay-menu">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="roadmap.html">Roadmap</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
       <li><a href="legal.html">Legal</a></li>
-     </ul>
-   </div>
-  </nav>
-
-<!-- OVERLAY MENU -->
-  <div id="overlayMenu" class="overlay-menu">
-   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="roadmap.html">Roadmap</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
-    <li><a href="legal.html">Legal</a></li>
-   </ul>
+    </ul>
   </div>
 
-<!-- HAMBURGER -->
- <div class="hamburger-menu" id="hamburger">
-  <div></div>
-  <div></div>
-  <div></div>
- </div>
+  <!-- HAMBURGER -->
+  <div class="hamburger-menu" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-<!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="hero-alt fade-in-section">
-   <div class="container">
-    <h1 class="section-title">Reach Out. We're Listening.</h1>
-    <p class="subtag">JAOLA responds to every message — no bots, no delay, no shame. If you're not sure how to ask, just say that. We'll meet you where you're at.</p>
+    <div class="container">
+      <h1 class="section-title">Reach Out. We're Listening.</h1>
+      <p class="subtag">JAOLA responds to every message — no bots, no delay, no shame. If you're not sure how to ask, just say that. We'll meet you where you're at.</p>
     </div>
-    <!-- Contact Form -->
-    <div>
-      <section class="tally-contact fade-in-section">
-      <div class="container">
-      <h2 class="section-title glow">Send a Message</h2>
-      <iframe 
-      data-tally-src="https://tally.so/embed/wvbG4d?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-      loading="lazy" 
-      width="100%" 
-      height="1504" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0" 
-      title="Send a Message">
-    </iframe>
-   </div>
   </section>
 
-<!-- FOOTER -->
-  <footer>
+  <!-- TALLY FORM -->
+  <section class="tally-contact fade-in-section">
     <div class="container">
-      <p>JAOLA | Housing. Health. Heart.</p>
-      <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a> | Instagram: <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
-      <p>CNA-Certified | Utah Registered | <a href="legal.html">Privacy Policy</a></p>
+      <h2 class="section-title glow">Send a Message</h2>
+      <iframe 
+        data-tally-src="https://tally.so/embed/wvbG4d?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+        loading="lazy" 
+        width="100%" 
+        height="1504" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0" 
+        title="Send a Message">
+      </iframe>
     </div>
-   </footer>
-  
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>JAOLA | Housing. Health. Heart.</p>
+    <p>Email: <a href="mailto:jaolacare@gmail.com">jaolacare@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/jaolacare" target="_blank">@jaolacare</a></p>
+    <p>CNA-Certified | Utah Registered | <a href="legal.html">Privacy Policy</a></p>
+  </footer>
+
+  <!-- JS -->
   <script src="script.js"></script>
- 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-     if (typeof Tally !== 'undefined') {
-      Tally.loadEmbeds();
-       }
+      if (typeof Tally !== 'undefined') {
+        Tally.loadEmbeds();
+      }
+
+      // Scroll fade-in observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.fade-in-section').forEach(section => {
+        observer.observe(section);
+      });
     });
   </script>
 </body>
+
 </html>
