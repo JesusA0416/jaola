@@ -294,40 +294,63 @@ footer a {
   opacity: 1;
   transform: translateY(0);
 }
-.heart-animation {
-  width: 100px;
-  height: 90px;
+body {
+  background: black;
+  color: #fff;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 3em;
+  text-align: center;
+  scrollbar-width: none;
+}
+
+.heart {
+  fill: red;
   position: relative;
-  margin: 40px auto;
-  transform: scale(1);
-  animation: pulse 1.2s infinite ease-in-out;
-}
-
-.heart-animation::before,
-.heart-animation::after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 90px;
-  background: #e63946;
-  border-radius: 50%;
-}
-
-.heart-animation::before {
-  left: 50px;
-}
-
-.heart-animation::after {
-  top: 50px;
+  top: 5px;
+  width: 50px;
+  animation: pulse 1s ease infinite;
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.15);
+    transform: scale(1.3);
   }
+  100% {
+    transform: scale(1);
+  }
+}
+#heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+}
+
+#heart span {
+  width: 100%;
+  display: block;
+  top: 50%;
+  z-index: 1;
+}
+
+#heart {
+  width: 100px;
+  height: 90px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#heart span {
+  width: 100%;
+  display: block;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 .heart-demo {
   width: 100%;
