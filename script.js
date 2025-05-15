@@ -1,22 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.getElementById('hamburger');
-  const overlayClose = document.getElementById('overlayClose');
+  const overlay = document.getElementById('overlayMenu');
 
-  window.toggleMenu = function () {
-    overlay.classList.toggle('show');
+  // Toggle menu function
+  function toggleMenu() {
     hamburger.classList.toggle('is-active');
-  };
-});
+    overlay.classList.toggle('show');
+    
+    // Prevent scrolling when menu is open
+    if (overlay.classList.contains('show')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
 
-  const faders = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener('click', toggleMenu);
 
-  faders.forEach(el => observer.observe(el));
+  // Close menu when clicking on menu links
+  document.querySelectorAll('.overlay-menu a').forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+  
+  // Close menu when window is resized to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && overlay.classList.contains('show')) {
+      toggleMenu();
+    }
+  });
 });
