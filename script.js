@@ -43,17 +43,26 @@ document.addEventListener('DOMContentLoaded', function () {
 const canvas = document.getElementById('heartCanvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
-  let O = canvas.width;
-  let Q = canvas.height;
-  const Y = 6.3;
+
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const O = canvas.width;
+  const Q = canvas.height;
   const M = Math;
   const R = M.random;
   const C = M.cos;
+  const Y = 6.3;
   const v = 32;
-  let h = [];
-  let e = [];
 
-  for (let i = 0; i < Y; i += .2) {
+  let h = [], e = [];
+
+  for (let i = 0; i < Y; i += 0.2) {
     h.push([
       O / 2 + 180 * M.pow(M.sin(i), 3),
       Q / 2 + 10 * (-(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i)))
@@ -79,10 +88,9 @@ if (canvas) {
         q: ~~(R() * v),
         D: i % 2 * 2 - 1,
         F: R() * .2 + .7,
-        f: "hsla(" + ~~H + "," + ~~S + "%," + ~~B + "%,.1)"
+        f: `hsla(${~~H},${~~S}%,${~~B}%,.1)`
       };
     }
-
     e[i] = f;
   }
 
@@ -96,15 +104,15 @@ if (canvas) {
 
   function loop() {
     ctx.fillStyle = "rgba(0,0,0,.2)";
-    ctx.fillRect(0, 0, O, Q);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < v; i++) {
-      let f = e[i];
-      let u = f[0];
-      let q = h[u.q];
-      let D = u.x - q[0];
-      let E = u.y - q[1];
-      let G = M.sqrt(D * D + E * E);
+      const f = e[i];
+      const u = f[0];
+      const q = h[u.q];
+      const D = u.x - q[0];
+      const E = u.y - q[1];
+      const G = M.sqrt(D * D + E * E);
 
       if (G < 10) {
         if (R() > .95) {
@@ -126,8 +134,8 @@ if (canvas) {
       u.Y *= u.F;
 
       for (let k = 0; k < v - 1; k++) {
-        let T = f[k];
-        let N = f[k + 1];
+        const T = f[k];
+        const N = f[k + 1];
         N.x -= (N.x - T.x) * .7;
         N.y -= (N.y - T.y) * .7;
         render(N);
