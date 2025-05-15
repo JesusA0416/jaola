@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function toggleMenu() {
     hamburger.classList.toggle('is-active');
     overlay.classList.toggle('show');
-    
+
     // Prevent scrolling when menu is open
     if (overlay.classList.contains('show')) {
       document.body.style.overflow = 'hidden';
@@ -22,13 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.overlay-menu a').forEach(link => {
     link.addEventListener('click', toggleMenu);
   });
-  
+
   // Close menu when window is resized to desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 768 && overlay.classList.contains('show')) {
       toggleMenu();
     }
   });
+});
       const mobileNav = document.getElementById('mobile-nav');
       const hamburgerIcon = document.getElementById('hamburger-menu');
       const body = document.body;
