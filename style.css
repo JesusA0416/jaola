@@ -303,3 +303,27 @@ footer a {
   background: black;
   border-radius: 10px;
 }
+.custom-animation-demo {
+  background: #0e0e0e;
+  color: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.heart-canvas-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#heartCanvas {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  background: black;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 0, 100, 0.3);
+}
