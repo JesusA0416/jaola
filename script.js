@@ -59,7 +59,7 @@ for (let i = 0; i < v; i++) {
   for (let k = 0; k < v; k++) {
     f[k] = {
       x: x, y: y, X: 0, Y: 0,
-      R: (1 - k / v) + 1,
+      R: (1 - k / v) * 4 + 2,
       S: R() + 1,
       q: ~~(R() * v),
       D: i % 2 * 2 - 1,
