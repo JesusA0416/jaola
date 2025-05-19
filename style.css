@@ -357,16 +357,15 @@ section .container > p {
 .city-split-section {
   position: relative;
   width: 100%;
-  padding: 4rem 1rem;
+  text-align: center;
+  padding-bottom: 4rem;
   background-color: #000;
-  overflow: hidden;
 }
 
 .city-split-wrapper {
   display: flex;
   width: 100%;
-  aspect-ratio: 16 / 5; /* Better for responsiveness than fixed px height */
-  overflow: hidden;
+  height: 300px;
 }
 
 .half-bg {
@@ -374,10 +373,9 @@ section .container > p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: auto;
+  min-height: 300px;
 }
 
-/* Your two background images */
 .bg-left {
   background-image: url("assets/saltlake1.jpg");
 }
@@ -387,19 +385,17 @@ section .container > p {
 }
 
 .city-split-content {
-  position: relative;
-  z-index: 2;
   max-width: 800px;
-  margin: -80px auto 0 auto; /* Pull it up over the background */
+  margin: -150px auto 0 auto;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 16px;
+  position: relative;
+  z-index: 2;
   color: white;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
-/* Glowing purple heading */
 .city-split-content h2.section-title.glow {
   color: #6c3fcf;
   font-family: 'Lora', serif;
@@ -412,4 +408,5 @@ section .container > p {
   font-size: 1.05rem;
   line-height: 1.7;
   color: #f2f2f2;
+  margin-bottom: 1.5rem;
 }
