@@ -426,3 +426,19 @@ section .container > p {
   line-height: 1.8;
   margin-bottom: 2rem;
 }
+.city-section {
+  position: relative;
+  padding: 6rem 1rem;
+  text-align: center;
+  color: white;
+  background-image: 
+    url("assets/saltlake1.jpg"),
+    url("assets/saltlake2.jpg");
+  background-size: 50% 100%;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh; /* <-- THIS IS THE FIX */
+  display: flex;
+  align-items: center;
+}
