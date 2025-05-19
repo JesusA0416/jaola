@@ -419,5 +419,7 @@ section .container > p {
   margin-bottom: 1.5rem;
 }
 .bg-left {
-  border: 5px solid red !important;
+  background-image: url("assets/saltlake1.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
