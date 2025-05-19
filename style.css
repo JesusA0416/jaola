@@ -365,15 +365,16 @@ section .container > p {
 .city-split-wrapper {
   display: flex;
   width: 100%;
-  height: 200px; /* This is your new "normal section" size */
+  aspect-ratio: 16 / 5; /* Better for responsiveness than fixed px height */
+  overflow: hidden;
 }
 
-.city-bg {
+.half-bg {
   flex: 1;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.75);
+  height: auto;
 }
 
 /* Your two background images */
