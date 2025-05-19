@@ -398,3 +398,46 @@ section .container > p {
   line-height: 1.8;
   margin-bottom: 2rem;
 }
+.city-section-alt {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-bg-split {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1;
+}
+
+.bg-half {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-left {
+  background-image: url("assets/saltlake1.jpg");
+}
+
+.bg-right {
+  background-image: url("assets/saltlake2.jpg");
+}
+
+.city-overlay-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+}
