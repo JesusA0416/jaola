@@ -355,82 +355,13 @@ section .container > p {
   text-align: center;
 }
 .city-section {
-  padding: 3rem 1rem;
-  background-color: #f9f9fb;
-  text-align: center;
-}
-
-.city-grid.two-img {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  margin-top: 2rem;
-}
-
-.city-grid.two-img img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.city-grid.two-img img:hover {
-  transform: scale(1.03);
-}
-.city-section {
   position: relative;
-  padding: 6rem 1rem;
-  color: white;
-  text-align: center;
-  background: none;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
-}
-
-.city-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    url("assets/saltlake1.jpg"),
-    url("assets/saltlake2.jpg");
-  background-size: 50% 100%;
-  background-position: left center, right center;
-  background-repeat: no-repeat;
-  display: block;
-  z-index: 1;
-  opacity: 1; /* Show them fully! */
-}
-
-.city-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: rgba(0,0,0,0.5); /* Optional: darken behind text */
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-.city-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.city-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-.city-section {
-  position: relative;
-  padding: 6rem 1rem;
-  text-align: center;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: 
     url("assets/saltlake1.jpg"),
     url("assets/saltlake2.jpg");
@@ -438,7 +369,32 @@ section .container > p {
   background-position: left center, right center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vh; /* <-- THIS IS THE FIX */
-  display: flex;
-  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.city-bg {
+  /* No longer needed — only keep if you're doing image layering separately */
+}
+
+.city-overlay-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.city-overlay-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.city-overlay-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
 }
