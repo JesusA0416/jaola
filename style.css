@@ -369,7 +369,10 @@ section .container > p {
 
 .city-grid.two-img img {
   width: 100%;
+  height: auto;
+  max-width: 100%;
   border-radius: 16px;
+  object-fit: cover;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
