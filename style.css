@@ -354,3 +354,26 @@ section .container > p {
   font-size: 1.05rem;
   text-align: center;
 }
+.city-section {
+  padding: 3rem 1rem;
+  background-color: #f9f9fb;
+  text-align: center;
+}
+
+.city-grid.two-img {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  margin-top: 2rem;
+}
+
+.city-grid.two-img img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.city-grid.two-img img:hover {
+  transform: scale(1.03);
+}
