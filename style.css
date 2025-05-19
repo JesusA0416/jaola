@@ -418,3 +418,6 @@ section .container > p {
   color: #f2f2f2;
   margin-bottom: 1.5rem;
 }
+.bg-left {
+  border: 5px solid red !important;
+}
