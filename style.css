@@ -385,43 +385,31 @@ section .container > p {
   padding: 6rem 1rem;
   text-align: center;
   color: white;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.6)
-  ); /* fallback color */
-  overflow: hidden;
-}
-
-.city-section .city-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("assets/saltlake1.jpg"),
     url("assets/saltlake2.jpg");
-  background-size: cover, cover;
-  background-position: center center, center center;
-  background-blend-mode: screen;
-  filter: brightness(0.7) blur(6px);
-  z-index: 1;
-  opacity: 0.85;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-attachment: fixed;
 }
 
-.city-section .city-content {
+.city-content {
   position: relative;
   z-index: 2;
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.city-section .city-content h2 {
-  font-size: 1.75rem;
+.city-content h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.city-section .city-content p {
-  font-size: 1.05rem;
-  line-height: 1.7;
+.city-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
 }
