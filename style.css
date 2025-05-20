@@ -423,3 +423,8 @@ section .container > p {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.info-card img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 30px rgba(108, 63, 207, 0.3);
+}
