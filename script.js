@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.classList.toggle('show');
     document.body.style.overflow = overlay.classList.contains('show') ? 'hidden' : '';
   });
+// === FIX: Force visible if already in viewport on load ===
+document.querySelectorAll('.fade-in-section').forEach(section => {
+  const rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    section.classList.add('is-visible');
+  }
+});
 
   // Close overlay when link is clicked
   document.querySelectorAll('.overlay-menu a').forEach(link => {
@@ -40,6 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(card);
   });
 });
+// === FIX: Instantly show any .fade-in-section already visible on load ===
+document.querySelectorAll('.fade-in-section').forEach(section => {
+  const rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    section.classList.add('is-visible');
+  }
+});
+
 function initHeartCanvas() {
   const canvas = document.getElementById('heartCanvas');
   if (!canvas) return;
