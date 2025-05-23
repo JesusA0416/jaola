@@ -428,3 +428,11 @@ section .container > p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 30px rgba(108, 63, 207, 0.3);
 }
+.highlight-button {
+  background-color: #6B46C1;
+  color: white;
+  padding: 0.4em 0.8em;
+  border-radius: 0.4em;
+  font-weight: bold;
+  text-decoration: none;
+}
