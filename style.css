@@ -499,15 +499,3 @@ details.legal-toggle[open] {
 .legal-toggle {
   width: 100%;
 }
-footer {
-  width: 100%;
-  display: block;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-footer .container {
-  max-width: 960px;
-  margin: 0 auto;
-}
