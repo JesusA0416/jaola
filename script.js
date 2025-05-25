@@ -25,27 +25,32 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
     });
   });
 
-  // === SCROLL FADE-IN ANIMATION ===
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  // Automatically apply fade-in to all sections
-  document.querySelectorAll('section').forEach(section => {
-    section.classList.add('fade-in-section');
-    observer.observe(section);
+ // === SCROLL FADE-IN ANIMATION (UPGRADED) ===
+const fadeInObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target); // stop observing once it's shown
+    }
   });
+}, {
+  threshold: 0.15,
+  rootMargin: '0px 0px -50px 0px'
+});
 
-  // Optional: animate info-cards individually
-  document.querySelectorAll('.info-card').forEach(card => {
-    card.classList.add('fade-in-section');
-    observer.observe(card);
+// Apply to all .fade-in-section elements — including sections and info cards
+document.querySelectorAll('.fade-in-section').forEach(element => {
+  fadeInObserver.observe(element);
+});
+
+// Fallback: reveal all after 5 seconds if not triggered
+setTimeout(() => {
+  document.querySelectorAll('.fade-in-section').forEach(section => {
+    if (!section.classList.contains('is-visible')) {
+      section.classList.add('is-visible');
+    }
   });
+}, 5000);
 });
 // === FIX: Instantly show any .fade-in-section already visible on load ===
 document.querySelectorAll('.fade-in-section').forEach(section => {
