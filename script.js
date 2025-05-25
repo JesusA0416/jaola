@@ -40,8 +40,11 @@ setTimeout(() => {
   });
 
   document.querySelectorAll('.fade-in-section').forEach(element => {
+  // Skip footer and footer children
+  if (!element.closest('footer')) {
     fadeInObserver.observe(element);
-  });
+  }
+});
 
   // Fallback: reveal all after 5 seconds if not triggered
   setTimeout(() => {
