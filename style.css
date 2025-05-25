@@ -475,3 +475,24 @@ main {
 footer {
   margin-top: auto;
 }
+details.legal-toggle {
+  margin: 2rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1.2rem;
+  background: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+details.legal-toggle summary {
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+details.legal-toggle[open] {
+  background: #f3faff;
+  border-color: #93b9db;
+}
