@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Custom websites, automation tools, and digital support. JAOLA offers clean code and client-first tech solutions.">
+  <title>Tech Services – JAOLA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="site-nav">
+  <div class="container nav-wrapper">
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+      </a>
+    </div>
+    <ul class="nav-links desktop-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal.html">Legal</a></li>
+      <li><a href="donate.html" class="highlight-button">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-alt fade-in-section">
+  <div class="container">
+    <h1 class="section-title">Tech Services That Work Beautifully</h1>
+    <p class="subtag">JAOLA builds tools that speak human — not just machine. Whether you're launching a site, automating a task, or solving a digital problem, we offer solutions that are clean, custom, and client-first.</p>
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="contact.html" class="cta-button">Request Tech Help</a>
+    </div>
+  </div>
+</section>
+
+<!-- WEBSITE DEVELOPMENT SECTION (SNIPPET YOU PROVIDED) -->
+<section class="services-section fade-in-section" style="background: #111; padding: 80px 20px;">
+  <div class="container" style="text-align: center;">
+    <h2 class="section-title" style="color: #fff;">Custom Website Development</h2>
+    <p class="subtag" style="color: #ddd; max-width: 700px; margin: 0 auto 30px;">
+      Need a site that slaps? We don’t just design—we engineer. JAOLA offers custom-coded websites using raw HTML, CSS, and JavaScript. No templates, no Wix-wobble, just handcrafted digital experiences that work beautifully on both mobile and desktop.
+    </p>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <h3>Static Sites</h3>
+        <p>Fully responsive websites built with semantic HTML5 and clean CSS3. Perfect for portfolios, resumes, landing pages, and resource hubs.</p>
+      </div>
+      <div class="info-card">
+        <h3>Custom Animations</h3>
+        <p>We don’t just fade in—we animate. Scroll effects, hover reveals, and responsive layouts crafted with CSS keyframes and JS triggers.</p>
+      </div>
+      <div class="info-card">
+        <h3>JavaScript Interactivity</h3>
+        <p>Interactive features like mobile navbars, form handling, embedded tools, and more—no frameworks, just code that works.</p>
+      </div>
+      <div class="info-card">
+        <h3>Documentation & Ownership</h3>
+        <p>You get the full source code, documentation, and the rights. Your domain. Your site. We just make it gorgeous and functional.</p>
+      </div>
+    </div>
+
+    <p style="color: #bbb; font-weight: bold; margin-top: 60px;">Here’s one of the projects we made with raw CSS & JavaScript animation. No libraries. No fluff. Just love.</p>
+    
+    <!-- Responsive Canvas Box -->
+    <div class="heart-wrapper">
+      <canvas id="heartCanvas"></canvas>
+    </div>
+
+    <a href="contact.html" class="cta-button" style="margin-top: 30px;">Request a Website</a>
+  </div>
+</section>
+
+<!-- ADDITIONAL TECH SERVICES -->
+<section class="fade-in-section">
+  <div class="container">
+    <h2 class="section-title">Other Tech Services We Offer</h2>
+    <div class="card-grid">
+      <div class="info-card fade-in-section">
+        <h3>Form Building & Automation</h3>
+        <p>We create smart intake forms, internal trackers, and submission workflows using Google Forms, Tally, or HTML — tailored to your process.</p>
+      </div>
+      <div class="info-card fade-in-section">
+        <h3>Email + Domain Setup</h3>
+        <p>We help you set up your own business email, website domain, and GSuite integration — no more @gmail when you're running a brand.</p>
+      </div>
+      <div class="info-card fade-in-section">
+        <h3>Backend Support & Troubleshooting</h3>
+        <p>Stuck on GitHub Pages? Broken JS? Need to debug a site or script? We troubleshoot bugs and explain the fix in plain language.</p>
+      </div>
+      <div class="info-card fade-in-section">
+        <h3>Client Dashboards & Resource Hubs</h3>
+        <p>Need a secure place for your team or clients to view documents, forms, or reports? We build custom mini-portals just for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="fade-in-section">
+  <div class="container" style="text-align: center;">
+    <h2 class="section-title">Built From Scratch. Built For You.</h2>
+    <p>Let us know what you’re imagining — we’ll tell you if we can build it. (And we probably can.)</p>
+    <a href="contact.html" class="cta-button">Start Your Tech Project</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>JAOLA | Code. Clients. Clarity.</p>
+    <p>Email: <a href="mailto:jesus.lopezaguilar@jaolagroup.org">jesus.lopezaguilar@jaolagroup.org</a></p>
+    <p>Custom Websites • Secure Forms • No Templates | <a href="legal.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<!-- INLINE FADE-IN JS -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll(".fade-in-section");
+
+    const appearOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(function (fader) {
+      appearOnScroll.observe(fader);
+    });
+  });
+</script>
+
+<!-- HEART CANVAS JS (optional if already embedded elsewhere) -->
+<script src="script.js"></script>
+</body>
+</html>
