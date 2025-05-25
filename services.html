@@ -7,15 +7,6 @@
   <title>Services – JAOLA</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17090957918"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17090957918');
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8715550417562602" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -40,7 +31,7 @@
   </div>
 </nav>
 
-<!-- OVERLAY MENU -->
+<!-- OVERLAY -->
 <div id="overlayMenu" class="overlay-menu">
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -53,14 +44,14 @@
   </ul>
 </div>
 
-<!-- HAMBURGER ICON -->
+<!-- HAMBURGER -->
 <div class="hamburger-menu" id="hamburger">
   <div></div>
   <div></div>
   <div></div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <main>
   <section class="fade-in-section">
     <div class="container">
@@ -70,22 +61,29 @@
       </p>
 
       <div class="card-grid">
-        <a href="/care" class="info-card fade-in-section" style="text-decoration: none;">
+        <div class="info-card fade-in-section">
           <h3>🏥 In-Home CNA Care</h3>
           <p>Certified bilingual support for families, elders, and recovery. Bathing, meals, transfers, companionship.</p>
-        </a>
-        <a href="/legal" class="info-card fade-in-section" style="text-decoration: none;">
+          <a href="/care" class="cta-button">Explore CNA Services</a>
+        </div>
+
+        <div class="info-card fade-in-section">
           <h3>📝 Legal Docs & Form Help</h3>
           <p>Download free templates or request custom Power of Attorney, HIPAA forms, and more.</p>
-        </a>
-        <a href="/housing" class="info-card fade-in-section" style="text-decoration: none;">
+          <a href="/legal" class="cta-button">Access Legal Help</a>
+        </div>
+
+        <div class="info-card fade-in-section">
           <h3>🏘️ Housing & Tenant Support</h3>
           <p>Lease reviews, eviction prep, landlord consulting, and ethical housing policy services.</p>
-        </a>
-        <a href="/tech" class="info-card fade-in-section" style="text-decoration: none;">
+          <a href="/housing" class="cta-button">Get Housing Help</a>
+        </div>
+
+        <div class="info-card fade-in-section">
           <h3>💻 Website & Tech Services</h3>
           <p>Custom-coded websites, automation tools, and digital support for small business & community groups.</p>
-        </a>
+          <a href="/tech" class="cta-button">Request Tech Support</a>
+        </div>
       </div>
     </div>
   </section>
@@ -108,8 +106,7 @@
   </div>
 </footer>
 
-<!-- FIXED: External JS -->
+<!-- JS -->
 <script src="script.js"></script>
 </body>
-
 </html>
