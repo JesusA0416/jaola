@@ -226,6 +226,31 @@ a:hover {
 .info-card h3 {
   color: #6c3fcf;
 }
+.info-card ul.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.info-card ul.checklist li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.info-card ul.checklist li:last-child {
+  border-bottom: none;
+}
+
+.info-card ul.checklist li::before {
+  content: "✔️";
+  margin-right: 12px;
+  font-size: 1.1rem;
+  line-height: 1;
+}
 
 /* === WHO WE SERVE === */
 .who-we-serve {
