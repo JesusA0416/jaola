@@ -500,8 +500,8 @@ details.legal-toggle[open] {
   width: 100%;
 }
 footer {
-  display: block !important;
   width: 100%;
+  display: block;
   padding: 40px 20px;
   background-color: #f9f9f9;
   text-align: center;
