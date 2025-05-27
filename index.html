@@ -351,6 +351,35 @@
   animation: fadeIn 1.5s ease-out forwards;
   animation-delay: 0.5s;
 }
+    /* Main logo */
+.site-logo {
+  height: 48px;
+  margin-right: 12px;
+}
+
+/* Tribute image (mobile only) */
+.mobile-tribute-nav {
+  display: none;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .mobile-tribute-nav {
+    display: inline-block;
+  }
+
+  .tribute-desktop {
+    display: none !important;
+  }
+
+  .hamburger-menu,
+  .overlay-menu {
+    display: none !important;
+  }
+}
   </style>
 </head>
 
@@ -374,8 +403,9 @@
     </div>
   </nav>
 <!-- MOBILE TRIBUTE -->
-<div class="tribute-mobile">
-  <img src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
+<div class="logo-area">
+  <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+  <img src="assets/diva-tribute-small.png" alt="Herminia María Castillo" class="mobile-tribute-nav" />
 </div>
 
 <!-- HAMBURGER -->
