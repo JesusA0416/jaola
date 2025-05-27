@@ -10,26 +10,68 @@
     html, body {
       margin: 0;
       padding: 0;
-      background-color: black;
+      background-color: #000;
       color: white;
       font-family: 'Lora', serif;
+      height: 100%;
       overflow: hidden;
     }
 
+    /* NAV FIXES */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 1rem 2rem;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .logo-area img {
+      height: 40px;
+    }
+
+    /* HERO TRIBUTE */
     .hero-tribute {
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100vh;
       overflow: hidden;
-      margin-top: 80px; /* adjust if nav height changes */
+      z-index: 0;
     }
 
     .hero-tribute iframe {
-      position: absolute;
-      top: 0; left: 0;
       width: 100%;
       height: 100%;
       border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .enter-button {
@@ -37,15 +79,16 @@
       bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.1);
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.08);
       color: white;
-      padding: 12px 28px;
-      border: 1px solid #aaa;
+      padding: 12px 24px;
+      border: 1px solid #ccc;
       border-radius: 30px;
       font-size: 1rem;
       text-decoration: none;
       transition: all 0.3s ease;
+      font-family: 'Nunito', sans-serif;
     }
 
     .enter-button:hover {
@@ -53,16 +96,16 @@
       border-color: white;
     }
 
-    /* Overlay menu and hamburger kept hidden for simplicity */
+    /* Hide menu overlay and hamburger */
     .overlay-menu, .hamburger-menu {
-      display: none;
+      display: none !important;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <nav class="site-nav">
     <div class="container nav-wrapper">
       <div class="logo-area">
@@ -72,11 +115,15 @@
       </div>
       <ul class="nav-links desktop-nav">
         <li><a href="main.html">Enter Site</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" class="highlight-button">Donate</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO TRIBUTE SECTION -->
+  <!-- HERO TRIBUTE -->
   <section class="hero-tribute">
     <iframe 
       src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
