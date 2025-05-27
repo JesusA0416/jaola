@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>In Loving Memory – JAOLA</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
   <style>
     html, body {
       margin: 0;
@@ -15,9 +16,17 @@
       font-family: 'Lora', serif;
       height: 100%;
       overflow: hidden;
+      overscroll-behavior: none;
+      touch-action: none;
     }
 
-    /* NAV FIXES */
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* NAVIGATION */
     .site-nav {
       position: fixed;
       top: 0;
@@ -40,6 +49,7 @@
       list-style: none;
       display: flex;
       gap: 1.5rem;
+      margin: 0;
     }
 
     .nav-links li a {
@@ -59,19 +69,22 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
       height: 100vh;
       overflow: hidden;
       z-index: 0;
     }
 
     .hero-tribute iframe {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       border: none;
       position: absolute;
       top: 0;
       left: 0;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
     }
 
     .enter-button {
@@ -87,8 +100,12 @@
       border-radius: 30px;
       font-size: 1rem;
       text-decoration: none;
-      transition: all 0.3s ease;
       font-family: 'Nunito', sans-serif;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 1.8s;
+      opacity: 0;
+      text-align: center;
+      white-space: nowrap;
     }
 
     .enter-button:hover {
@@ -96,10 +113,6 @@
       border-color: white;
     }
 
-    /* Hide menu overlay and hamburger */
-    .overlay-menu, .hamburger-menu {
-      display: none !important;
-    }
     .canva-overlay-blocker {
       position: absolute;
       bottom: 0;
@@ -109,24 +122,32 @@
       background: black;
       z-index: 9998;
     }
- /* Fade-in animation */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
 
-.hero-tribute iframe {
-  opacity: 0;
-  animation-delay: 1.8s;
-  animation: fadeIn 2s ease-out forwards;
-}
+    /* Responsive tweak */
+    @media (max-width: 600px) {
+      .enter-button {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        bottom: 20px;
+      }
 
-.enter-button {
-  opacity: 0;
-  animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 1.8s;
-}
+      .nav-links {
+        gap: 1rem;
+      }
 
+      .nav-links li a {
+        font-size: 0.9rem;
+      }
+
+      .logo-area img {
+        height: 32px;
+      }
+    }
+
+    /* Hide hamburger & overlay if not needed */
+    .overlay-menu, .hamburger-menu {
+      display: none !important;
+    }
   </style>
 </head>
 
@@ -150,16 +171,16 @@
     </div>
   </nav>
 
- <!-- HERO TRIBUTE -->
-<section class="hero-tribute">
-  <iframe 
-    src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-  <div class="canva-overlay-blocker"></div>
-  <a href="main.html" class="enter-button">Enter JAOLA</a>
-</section>
+  <!-- TRIBUTE SECTION -->
+  <section class="hero-tribute">
+    <iframe 
+      src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+    <div class="canva-overlay-blocker"></div>
+    <a href="main.html" class="enter-button">Enter JAOLA</a>
+  </section>
 
 </body>
 </html>
