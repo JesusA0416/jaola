@@ -290,6 +290,13 @@
 
   <!-- UNIVERSAL ENTER BUTTON -->
   <a href="main.html" class="enter-button">Enter JAOLA</a>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const overlayMenu = document.getElementById("overlayMenu");
 
+  hamburger.addEventListener("click", () => {
+    overlayMenu.classList.toggle("open");
+  });
+</script>
 </body>
 </html>
