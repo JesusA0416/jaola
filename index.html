@@ -1,68 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>In Loving Memory of Herminia María Castillo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In Loving Memory – JAOLA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      background-color: #000;
+      background-color: black;
+      color: white;
+      font-family: 'Lora', serif;
       overflow: hidden;
-      font-family: 'Libre Baskerville', 'Cormorant Garamond', serif;
     }
 
-    .canva-wrapper {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
+    .hero-tribute {
+      position: relative;
+      width: 100%;
       height: 100vh;
-      z-index: 1;
+      overflow: hidden;
+      margin-top: 80px; /* adjust if nav height changes */
     }
 
-    iframe {
+    .hero-tribute iframe {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    .enter-btn {
-      position: fixed;
+    .enter-button {
+      position: absolute;
       bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      border: 1px solid #888;
-      padding: 12px 24px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      padding: 12px 28px;
+      border: 1px solid #aaa;
       border-radius: 30px;
-      font-size: 0.95rem;
-      cursor: pointer;
+      font-size: 1rem;
       text-decoration: none;
-      transition: background 0.3s ease, border 0.3s ease;
+      transition: all 0.3s ease;
     }
 
-    .enter-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: #ffffff;
+    .enter-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: white;
+    }
+
+    /* Overlay menu and hamburger kept hidden for simplicity */
+    .overlay-menu, .hamburger-menu {
+      display: none;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="canva-wrapper">
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="container nav-wrapper">
+      <div class="logo-area">
+        <a href="main.html">
+          <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+        </a>
+      </div>
+      <ul class="nav-links desktop-nav">
+        <li><a href="main.html">Enter Site</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO TRIBUTE SECTION -->
+  <section class="hero-tribute">
     <iframe 
-      loading="lazy"
       src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
       allowfullscreen
-      allow="fullscreen">
+      loading="lazy">
     </iframe>
-  </div>
-
-  <a href="/main" class="enter-btn">Enter JAOLA</a>
+    <a href="main.html" class="enter-button">Enter JAOLA</a>
+  </section>
 
 </body>
 </html>
