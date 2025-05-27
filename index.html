@@ -17,8 +17,8 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .fade-in {
@@ -27,18 +27,19 @@
       animation-delay: 0.5s;
     }
 
-    /* NAVIGATION */
+    /* NAVBAR */
     .site-nav {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 1000;
       width: 100%;
+      height: 70px;
       background: rgba(0, 0, 0, 0.75);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 1.5rem;
+      align-items: center;
+      padding: 0 1.5rem;
+      z-index: 9999;
     }
 
     .site-logo {
@@ -57,7 +58,7 @@
       box-shadow: 0 3px 6px rgba(0,0,0,0.15);
       transition: background 0.3s ease;
       animation: fadeIn 1.5s ease-out forwards;
-      animation-delay: 2s;
+      animation-delay: 1.5s;
       opacity: 0;
     }
 
@@ -65,7 +66,7 @@
       background: #f0f0f0;
     }
 
-    /* TRIBUTE IMAGE FULLSCREEN */
+    /* TRIBUTE IMAGE CONTAINER */
     .tribute-container {
       position: fixed;
       top: 0;
@@ -77,10 +78,11 @@
 
     .tribute-container iframe,
     .tribute-container img {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
       object-position: top center;
+      transform: scale(0.9); /* ZOOM OUT FURTHER */
       display: block;
       border: none;
       opacity: 0;
@@ -88,6 +90,7 @@
       animation-delay: 0.5s;
     }
 
+    /* MOBILE SWITCH */
     @media (max-width: 768px) {
       .site-logo {
         height: 32px;
@@ -116,15 +119,19 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav class="site-nav fade-in">
     <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
     <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
   </nav>
 
-  <!-- TRIBUTE BLOCK -->
+  <!-- TRIBUTE IMAGE -->
   <div class="tribute-container fade-in">
-    <iframe src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed" allowfullscreen loading="lazy"></iframe>
+    <iframe 
+      src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
     <img src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
   </div>
 
