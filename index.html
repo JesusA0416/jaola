@@ -173,6 +173,83 @@
     .overlay-menu, .hamburger-menu {
       display: none !important;
     }
+    /* Fix logo size on mobile */
+.logo-area img {
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  /* NAVBAR FIXES */
+  .site-nav {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-links.desktop-nav {
+    display: none; /* hide on mobile */
+  }
+
+  .hamburger-menu {
+    display: block !important;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+
+  /* Show overlay nav when toggled */
+  .overlay-menu {
+    display: none;
+    position: fixed;
+    background: black;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .overlay-menu.open {
+    display: flex !important;
+  }
+
+  .overlay-menu a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  /* Fix Enter Button */
+  .enter-button {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    font-size: 0.95rem;
+    padding: 10px 22px;
+  }
+
+  .tribute-mobile img {
+    object-position: top center;
+  }
+}
   </style>
 </head>
 
