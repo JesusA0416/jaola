@@ -100,6 +100,16 @@
     .overlay-menu, .hamburger-menu {
       display: none !important;
     }
+    .canva-overlay-blocker {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 180px;
+      height: 50px;
+      background: black;
+      z-index: 9998;
+    }
+
   </style>
 </head>
 
@@ -123,15 +133,16 @@
     </div>
   </nav>
 
-  <!-- HERO TRIBUTE -->
-  <section class="hero-tribute">
-    <iframe 
-      src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
-    <a href="main.html" class="enter-button">Enter JAOLA</a>
-  </section>
+ <!-- HERO TRIBUTE -->
+<section class="hero-tribute">
+  <iframe 
+    src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+  <div class="canva-overlay-blocker"></div>
+  <a href="main.html" class="enter-button">Enter JAOLA</a>
+</section>
 
 </body>
 </html>
