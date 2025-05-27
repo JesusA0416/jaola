@@ -175,23 +175,26 @@
 
     .enter-button {
   position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: env(safe-area-inset-bottom, 12px); /* supports iOS safe zone */
+  left: 0;
+  right: 0;
+  margin: auto;
   z-index: 9999;
   background: rgba(255, 255, 255, 0.08);
   color: white;
-  padding: 10px 22px;
+  padding: 10px 24px;
   border: 1px solid #ccc;
   border-radius: 30px;
   font-size: 0.95rem;
   text-decoration: none;
   font-family: 'Nunito', sans-serif;
-  max-width: 80%;
+  max-width: 260px;
+  text-align: center;
   white-space: nowrap;
   animation: fadeIn 1.5s ease-out forwards;
   animation-delay: 2s;
   opacity: 0;
+  box-sizing: border-box;
 }
 
     .enter-button:hover {
