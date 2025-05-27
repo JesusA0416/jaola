@@ -7,6 +7,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
+    body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  font-family: 'Lora', serif;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+/* MOBILE TRIBUTE IMAGE LOCKED TO SCREEN */
+.tribute-mobile {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.tribute-mobile img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: top center; /* adjust if you want to center her vertically */
+  display: block;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
     html, body {
       margin: 0;
       padding: 0;
