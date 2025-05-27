@@ -174,28 +174,27 @@
       animation-delay: 0.5s;
     }
 
-    .enter-button {
+   .enter-button {
   position: fixed;
-  bottom: env(safe-area-inset-bottom, 12px); /* supports iOS safe zone */
-  left: 0;
-  right: 0;
-  margin: auto;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom, 12px) + 12px);
+  transform: translateX(-50%);
   z-index: 9999;
   background: rgba(255, 255, 255, 0.08);
   color: white;
-  padding: 10px 24px;
+  padding: 12px 26px;
   border: 1px solid #ccc;
   border-radius: 30px;
   font-size: 0.95rem;
-  text-decoration: none;
   font-family: 'Nunito', sans-serif;
-  max-width: 260px;
   text-align: center;
+  text-decoration: none;
   white-space: nowrap;
+  max-width: 80vw;
   animation: fadeIn 1.5s ease-out forwards;
   animation-delay: 2s;
   opacity: 0;
-  box-sizing: border-box;
+  backdrop-filter: blur(3px);
 }
 
     .enter-button:hover {
