@@ -5,114 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>In Loving Memory – JAOLA</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
-
   <style>
-    .nav-tribute-button {
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: background 0.3s ease;
-  margin-left: auto;
-}
-
-.nav-tribute-button:hover {
-  background-color: #f0f0f0;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .nav-tribute-button {
-    font-size: 0.85rem;
-    padding: 8px 16px;
-    border-radius: 24px;
-  }
-}
-    html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: black;
-  font-family: 'Lora', serif;
-}
-
-/* Mobile tribute container */
-.tribute-mobile {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-
-/* Mobile tribute image with raised position */
-.tribute-mobile img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center 8%;
-  transform: scale(0.95);
-  display: block;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 0.5s;
-}
-    body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
-  background: black;
-  font-family: 'Lora', serif;
-  overscroll-behavior: none;
-  touch-action: none;
-}
-
-/* MOBILE TRIBUTE IMAGE LOCKED TO SCREEN */
-.tribute-mobile {
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
-
-.tribute-mobile img {
-  width: 100%;
-  height: 100vh;
-  object-fit: contain;
-  object-position: top center; /* shows her full body + quote */
-  display: block;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 0.5s;
-  transform: translateY(-3.5%); /* adjust this value to raise her more or less */
-}
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: white;
-      font-family: 'Lora', serif;
       height: 100%;
-      overflow-x: hidden;
-      overscroll-behavior: none;
+      width: 100%;
+      background: black;
+      font-family: 'Lora', serif;
+      overflow: hidden;
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
     }
 
     /* NAVIGATION */
@@ -120,356 +32,101 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 0.75rem 1.5rem;
       z-index: 1000;
-    }
-
-    .nav-wrapper {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-      gap: 1rem;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-links li a {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: white;
-      white-space: nowrap;
-    }
-
-    .logo-area img {
+    .site-logo {
       height: 40px;
     }
 
-    /* TRIBUTE BLOCKS */
-    .tribute-desktop, .tribute-mobile {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
+    .nav-tribute-button {
+      padding: 10px 22px;
+      background: white;
+      color: black;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s ease;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 2s;
+      opacity: 0;
     }
 
-    .tribute-desktop iframe {
+    .nav-tribute-button:hover {
+      background: #f0f0f0;
+    }
+
+    /* TRIBUTE IMAGE FULLSCREEN */
+    .tribute-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
+
+    .tribute-container iframe,
+    .tribute-container img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
       border: none;
       opacity: 0;
       animation: fadeIn 1.5s ease-out forwards;
       animation-delay: 0.5s;
     }
 
-    .canva-overlay-blocker {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 180px;
-      height: 50px;
-      background: black;
-      z-index: 9998;
-    }
-
-    .tribute-mobile {
-      display: none;
-      padding-top: 70px; /* to prevent nav overlap */
-      text-align: center;
-    }
-
-    .tribute-mobile img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      object-position: top center;
-      opacity: 0;
-      animation: fadeIn 1.5s ease-out forwards;
-      animation-delay: 0.5s;
-    }
-
-   .enter-button {
-  position: fixed;
-  left: 50%;
-  bottom: calc(env(safe-area-inset-bottom, 12px) + 12px);
-  transform: translateX(-50%);
-  z-index: 9999;
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-  padding: 12px 26px;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  font-size: 0.95rem;
-  font-family: 'Nunito', sans-serif;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  max-width: 80vw;
-  animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 2s;
-  opacity: 0;
-  backdrop-filter: blur(3px);
-}
-
-    .enter-button:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: white;
-    }
-
-    /* RESPONSIVE SWITCH */
     @media (max-width: 768px) {
-      .tribute-desktop {
-        display: none;
-      }
-
-      .tribute-mobile {
-        display: block;
-      }
-
-      .logo-area img {
+      .site-logo {
         height: 32px;
       }
 
-      .nav-links {
-        gap: 1rem;
+      .nav-tribute-button {
+        font-size: 0.85rem;
+        padding: 8px 16px;
       }
 
-      .nav-links li a {
-        font-size: 0.9rem;
+      .tribute-container iframe {
+        display: none;
       }
 
-      .enter-button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
+      .tribute-container img {
+        display: block;
       }
     }
 
-    .overlay-menu, .hamburger-menu {
-      display: none !important;
+    @media (min-width: 769px) {
+      .tribute-container img {
+        display: none;
+      }
     }
-    html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: black;
-  font-family: 'Lora', serif;
-}
-
-/* FULLSCREEN MOBILE TRIBUTE IMAGE */
-.tribute-mobile {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.tribute-mobile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 0.5s;
-}
-
-/* FADE IN */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* RESPONSIVE: SWITCH TO MOBILE VIEW */
-@media (max-width: 768px) {
-  .tribute-desktop {
-    display: none !important;
-  }
-
-  .tribute-mobile {
-    display: block;
-  }
-
-  .nav-links {
-    display: none !important;
-  }
-
-  .hamburger-menu {
-    display: block !important;
-  }
-
-  .enter-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-    bottom: 20px;
-  }
-}
-
-/* HAMBURGER STYLING */
-.hamburger-menu {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1001;
-  display: none;
-  cursor: pointer;
-}
-
-.hamburger-menu div {
-  width: 24px;
-  height: 3px;
-  background: white;
-  margin: 4px 0;
-  border-radius: 2px;
-}
-
-/* OVERLAY MENU STYLING */
-.overlay-menu {
-  display: none;
-  position: fixed;
-  background: black;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.overlay-menu.open {
-  display: flex !important;
-}
-
-.overlay-menu a {
-  color: white;
-  font-size: 1.2rem;
-  text-decoration: none;
-  font-family: 'Nunito', sans-serif;
-}
-    .tribute-mobile img {
-  width: 100%;
-  height: 100vh;
-  object-fit: contain;
-  object-position: top center;
-  display: block;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 0.5s;
-}
-    /* Main logo */
-.site-logo {
-  height: 48px;
-  margin-right: 12px;
-}
-
-/* Tribute image (mobile only) */
-.mobile-tribute-nav {
-  display: none;
-  height: 48px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-/* Mobile override */
-@media (max-width: 768px) {
-  .mobile-tribute-nav {
-    display: inline-block;
-  }
-
-  .tribute-desktop {
-    display: none !important;
-  }
-
-  .hamburger-menu,
-  .overlay-menu {
-    display: none !important;
-  }
-}
   </style>
 </head>
-
 <body>
 
   <!-- NAVBAR -->
-  <nav class="site-nav">
-  <div class="container nav-wrapper">
-    <div class="logo-area">
-      <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
-    </div>
-
-    <!-- Remove if you're not showing nav links -->
-    <ul class="nav-links desktop-nav"></ul>
-
-    <!-- The Button You Were About to Commit Crimes Over -->
+  <nav class="site-nav fade-in">
+    <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
     <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
-  </div>
-</nav>
-<!-- MOBILE TRIBUTE -->
-<div class="logo-area">
-  <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
-  <img src="assets/diva-tribute-small.png" alt="Herminia María Castillo" class="mobile-tribute-nav" />
-</div>
+  </nav>
 
-<!-- HAMBURGER -->
-<div class="hamburger-menu" id="hamburger">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
-<!-- OVERLAY NAV -->
-<div class="overlay-menu" id="overlayMenu">
-  <a href="main.html">Enter Site</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-  <a href="donate.html">Donate</a>
-</div>
-  <!-- DESKTOP TRIBUTE -->
-  <div class="tribute-desktop">
-    <iframe 
-      src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
-    <div class="canva-overlay-blocker"></div>
-  </div>
-
-  <!-- MOBILE TRIBUTE -->
-  <div class="tribute-mobile">
+  <!-- TRIBUTE BLOCK -->
+  <div class="tribute-container fade-in">
+    <iframe src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed" allowfullscreen loading="lazy"></iframe>
     <img src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
   </div>
 
-  <!-- UNIVERSAL BUTTON -->
-  <a href="main.html" class="enter-button">Enter JAOLA</a>
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const overlayMenu = document.getElementById("overlayMenu");
-
-  hamburger.addEventListener("click", () => {
-    overlayMenu.classList.toggle("open");
-  });
-</script>
 </body>
 </html>
