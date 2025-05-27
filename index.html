@@ -20,7 +20,7 @@
       touch-action: none;
     }
 
-    /* Fade-in animation */
+    /* FADE IN ANIMATION */
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -41,54 +41,70 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       max-width: 1200px;
       margin: 0 auto;
+      gap: 1rem;
     }
 
     .nav-links {
-      list-style: none;
       display: flex;
       gap: 1.5rem;
+      list-style: none;
+      padding: 0;
       margin: 0;
     }
 
     .nav-links li a {
-      color: white;
-      text-decoration: none;
       font-family: 'Nunito', sans-serif;
-      font-weight: 600;
       font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      line-height: 1.6;
+      white-space: nowrap;
     }
 
     .logo-area img {
       height: 40px;
     }
 
-    /* HERO TRIBUTE */
-    .hero-tribute {
+    /* TRIBUTE BLOCKS */
+    .tribute-desktop,
+    .tribute-mobile {
       position: absolute;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-      z-index: 0;
     }
 
-    .hero-tribute iframe {
+    .tribute-desktop iframe {
       width: 100vw;
       height: 100vh;
       border: none;
-      position: absolute;
-      top: 0;
-      left: 0;
       opacity: 0;
       animation: fadeIn 1.5s ease-out forwards;
       animation-delay: 0.5s;
     }
 
+    .tribute-mobile {
+      display: none;
+    }
+
+    .tribute-mobile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    /* ENTER BUTTON */
     .enter-button {
-      position: absolute;
+      position: fixed;
       bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
@@ -102,9 +118,8 @@
       text-decoration: none;
       font-family: 'Nunito', sans-serif;
       animation: fadeIn 1.5s ease-out forwards;
-      animation-delay: 1.8s;
+      animation-delay: 2s;
       opacity: 0;
-      text-align: center;
       white-space: nowrap;
     }
 
@@ -113,6 +128,7 @@
       border-color: white;
     }
 
+    /* CANVA CONTROL OVERLAY HIDE */
     .canva-overlay-blocker {
       position: absolute;
       bottom: 0;
@@ -123,16 +139,25 @@
       z-index: 9998;
     }
 
-    /* Responsive tweak */
-    @media (max-width: 600px) {
+    /* RESPONSIVE SWITCH FOR MOBILE */
+    @media (max-width: 768px) {
+      .tribute-desktop {
+        display: none;
+      }
+
+      .tribute-mobile {
+        display: block;
+      }
+
       .enter-button {
         font-size: 0.9rem;
-        padding: 10px 18px;
+        padding: 10px 20px;
         bottom: 20px;
       }
 
       .nav-links {
         gap: 1rem;
+        justify-content: center;
       }
 
       .nav-links li a {
@@ -144,7 +169,7 @@
       }
     }
 
-    /* Hide hamburger & overlay if not needed */
+    /* HIDE OVERLAY + HAMBURGER NAV ON TRIBUTE PAGE */
     .overlay-menu, .hamburger-menu {
       display: none !important;
     }
@@ -153,7 +178,7 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- JAOLA NAVBAR -->
   <nav class="site-nav">
     <div class="container nav-wrapper">
       <div class="logo-area">
@@ -171,16 +196,23 @@
     </div>
   </nav>
 
-  <!-- TRIBUTE SECTION -->
-  <section class="hero-tribute">
+  <!-- DESKTOP TRIBUTE (Canva embed) -->
+  <div class="tribute-desktop">
     <iframe 
       src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
       allowfullscreen
       loading="lazy">
     </iframe>
     <div class="canva-overlay-blocker"></div>
-    <a href="main.html" class="enter-button">Enter JAOLA</a>
-  </section>
+  </div>
+
+  <!-- MOBILE TRIBUTE (vertical PNG image) -->
+  <div class="tribute-mobile">
+    <img src="assets/diva-tribute.png" alt="Tribute to Herminia María Castillo" />
+  </div>
+
+  <!-- UNIVERSAL ENTER BUTTON -->
+  <a href="main.html" class="enter-button">Enter JAOLA</a>
 
 </body>
 </html>
