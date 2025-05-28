@@ -17,30 +17,42 @@
 
     /* NAVIGATION HEADER */
     .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      background: rgba(0, 0, 0, 0.75);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 1.5rem;
-      z-index: 9999;
-      animation: fadeSlideIn 1.5s ease-out forwards;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 9999;
+}
 
-    .site-logo {
-      height: 40px;
-    }
+.site-logo {
+  height: 40px;
+  position: absolute;
+  left: 20px;
+}
 
-    .tribute-wrapper {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-    }
+.nav-button-center {
+  text-align: center;
+}
+
+.nav-tribute-button {
+  padding: 10px 22px;
+  background: white;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
 
     /* DESKTOP BACKGROUND IMAGE WRAPPED + ZOOMED */
     .desktop-bg-wrapper {
