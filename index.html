@@ -11,17 +11,39 @@
       padding: 0;
       background: black;
       font-family: 'Lora', serif;
-      overflow: hidden;
       height: 100%;
       width: 100%;
+      overflow: hidden;
     }
 
+    /* NAVIGATION HEADER */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(0, 0, 0, 0.75);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+      z-index: 9999;
+      animation: fadeSlideIn 1.5s ease-out forwards;
+    }
+
+    .site-logo {
+      height: 40px;
+    }
+
+    /* TRIBUTE WRAPPER */
     .tribute-wrapper {
       position: relative;
       width: 100vw;
       height: 100vh;
       background: black;
       overflow: hidden;
+      z-index: 1;
     }
 
     .tribute-img-mobile {
@@ -29,16 +51,20 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      animation: fadeSlideIn 1.5s ease-out forwards;
+      animation-delay: 0.3s;
     }
 
     .tribute-desktop-bg {
       display: none;
       width: 100%;
       height: 100%;
-      background-image: url('assets/diva-tribute-desktop.jpg');
+      background-image: url('assets/diva-tribute-desktop.jpg'); /* rename your uploaded image here */
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+      animation: fadeSlideIn 1.5s ease-out forwards;
+      animation-delay: 0.3s;
     }
 
     .nav-tribute-button {
@@ -56,16 +82,35 @@
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       z-index: 10;
+      opacity: 0;
+      animation: fadeSlideIn 1.5s ease-out forwards;
+      animation-delay: 1s;
     }
 
-    /* MOBILE */
+    /* ANIMATIONS */
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE RULES */
     @media (max-width: 768px) {
+      .site-logo {
+        height: 32px;
+      }
+
       .tribute-img-mobile {
         display: block;
       }
     }
 
-    /* DESKTOP */
+    /* DESKTOP RULES */
     @media (min-width: 769px) {
       .tribute-desktop-bg {
         display: block;
@@ -75,9 +120,20 @@
 </head>
 <body>
 
+  <!-- NAVIGATION HEADER -->
+  <nav class="site-nav">
+    <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+  </nav>
+
+  <!-- TRIBUTE CONTENT -->
   <div class="tribute-wrapper">
+    <!-- Desktop background tribute -->
     <div class="tribute-desktop-bg"></div>
+
+    <!-- Mobile image version -->
     <img class="tribute-img-mobile" src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
+
+    <!-- CTA Button -->
     <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
   </div>
 
