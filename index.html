@@ -164,7 +164,50 @@
       .tribute-img-mobile {
         display: none;
       }
-    }
+    @media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .mobile-tribute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+  }
+
+  .tribute-img-mobile {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .mobile-button-wrapper {
+    padding: 20px 0 50px; /* 👈 controls spacing BELOW image */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: black;
+  }
+
+  .nav-tribute-button {
+    padding: 12px 30px;
+    background: white;
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
   </style>
 </head>
 <body>
