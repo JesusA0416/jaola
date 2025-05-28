@@ -9,16 +9,10 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
       background: black;
       font-family: 'Lora', serif;
       overflow: hidden;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      height: 100%;
     }
 
     .site-nav {
@@ -27,33 +21,16 @@
       left: 0;
       width: 100%;
       height: 70px;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 1.5rem;
-      z-index: 9999;
+      z-index: 999;
     }
 
     .site-logo {
       height: 40px;
-    }
-
-    .nav-tribute-button {
-      padding: 10px 22px;
-      background: white;
-      color: black;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-      transition: background 0.3s ease;
-    }
-
-    .nav-tribute-button:hover {
-      background: #f0f0f0;
     }
 
     .tribute-wrapper {
@@ -63,35 +40,32 @@
       width: 100vw;
       height: 100vh;
       z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 1.5s ease-out forwards;
-      animation-delay: 0.5s;
-      opacity: 0;
     }
 
-    .tribute-img, .tribute-iframe {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      object-position: top center;
-      border: none;
-      transform: scale(0.9);
-    }
-
+    .tribute-iframe,
     .tribute-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: none;
+      border: none;
     }
 
-    .nav-tribute-button.centered {
+    .nav-tribute-button {
       position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       bottom: 40px;
+      padding: 12px 30px;
+      background: white;
+      color: black;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      border-radius: 30px;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       z-index: 10;
-      animation: fadeIn 1.5s ease-out forwards;
-      animation-delay: 1s;
-      opacity: 0;
     }
 
     /* MOBILE: show image */
@@ -99,16 +73,10 @@
       .tribute-img {
         display: block;
       }
-      .tribute-iframe {
-        display: none;
-      }
     }
 
     /* DESKTOP: show Canva iframe */
     @media (min-width: 769px) {
-      .tribute-img {
-        display: none;
-      }
       .tribute-iframe {
         display: block;
       }
@@ -117,21 +85,29 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav class="site-nav">
     <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
   </nav>
 
-  <!-- TRIBUTE SECTION -->
+  <!-- Tribute Display (only one shows based on screen size) -->
   <div class="tribute-wrapper">
-    <!-- Desktop iframe -->
-    <iframe class="tribute-iframe" src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed" allowfullscreen loading="lazy"></iframe>
-    
-    <!-- Mobile image -->
-    <img class="tribute-img" src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
+    <!-- Desktop Canva tribute -->
+    <iframe
+      class="tribute-iframe"
+      src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
 
-    <!-- CTA Button -->
-    <a href="main.html" class="nav-tribute-button centered">Enter JAOLA</a>
+    <!-- Mobile static photo -->
+    <img
+      class="tribute-img"
+      src="assets/diva-tribute.png"
+      alt="Herminia María Castillo Tribute" />
+
+    <!-- Shared Button -->
+    <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
   </div>
 
 </body>
