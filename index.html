@@ -13,61 +13,39 @@
       font-family: 'Lora', serif;
       overflow: hidden;
       height: 100%;
-    }
-
-    .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 70px;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 1.5rem;
-      z-index: 999;
-    }
-
-    .site-logo {
-      height: 40px;
     }
 
     .tribute-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      z-index: 1;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .iframe-container {
+      position: relative;
       width: 100vw;
       height: 100vh;
       background: black;
       overflow: hidden;
     }
 
-    .tribute-iframe,
-    .tribute-img {
+    .tribute-img-mobile {
+      display: none;
       width: 100%;
       height: 100%;
-      border: none;
       object-fit: cover;
+    }
+
+    .tribute-desktop-bg {
       display: none;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/diva-tribute-desktop.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     .nav-tribute-button {
       position: absolute;
+      bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      bottom: 40px;
       padding: 12px 30px;
       background: white;
       color: black;
@@ -80,52 +58,26 @@
       z-index: 10;
     }
 
-    /* MOBILE: show image */
+    /* MOBILE */
     @media (max-width: 768px) {
-      .tribute-img {
+      .tribute-img-mobile {
         display: block;
       }
     }
 
-    /* DESKTOP: show Canva iframe and black sides */
+    /* DESKTOP */
     @media (min-width: 769px) {
-      .iframe-container {
+      .tribute-desktop-bg {
         display: block;
-      }
-
-      .tribute-iframe {
-        display: block;
-        transform: scale(1.05); /* Optional zoom to hide toolbar */
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="site-nav">
-    <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
-  </nav>
-
-  <!-- TRIBUTE -->
   <div class="tribute-wrapper">
-    <!-- DESKTOP Canva Embed -->
-    <div class="iframe-container">
-      <iframe
-        class="tribute-iframe"
-        src="https://www.canva.com/design/DAGoqvixdnU/WdH5uJpDWGZJvsrBAGDrbA/view?embed"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-    </div>
-
-    <!-- MOBILE Tribute Image -->
-    <img
-      class="tribute-img"
-      src="assets/diva-tribute.png"
-      alt="Herminia María Castillo Tribute" />
-
-    <!-- CTA Button -->
+    <div class="tribute-desktop-bg"></div>
+    <img class="tribute-img-mobile" src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
     <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
   </div>
 
