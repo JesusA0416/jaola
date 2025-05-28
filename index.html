@@ -13,138 +13,14 @@
       font-family: 'Lora', serif;
       height: 100%;
       width: 100%;
+      overflow-x: hidden;
     }
 
-    /* NAVIGATION HEADER */
-    .site-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1.5rem;
-  z-index: 9999;
-}
-
-.site-logo {
-  height: 40px;
-  position: absolute;
-  left: 20px;
-}
-
-.nav-button-center {
-  text-align: center;
-}
-
-.nav-tribute-button {
-  padding: 10px 22px;
-  background: white;
-  color: black;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease;
-}
-
-
-    /* DESKTOP BACKGROUND IMAGE WRAPPED + ZOOMED */
-    .desktop-bg-wrapper {
-      display: none;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .tribute-desktop-bg {
-      width: 100%;
-      height: 100%;
-      background-image: url('assets/diva-tribute-desktop.jpg');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      transform: scale(0.9);
-      transform-origin: center center;
-      animation: fadeSlideIn 1.5s ease-out forwards;
-      animation-delay: 0.3s;
-    }
-
-    /* MOBILE IMAGE */
-    .tribute-img-mobile {
-      display: none;
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      animation: fadeSlideIn 1.5s ease-out forwards;
-      animation-delay: 0.3s;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-container {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
-  pointer-events: none;
-}
-
-/* DESKTOP – keep as is */
-@media (min-width: 769px) {
-  .cta-container {
-    bottom: 12vh;
-  }
-}
-
-/* MOBILE – override everything and FORCE visibility */
-@media (max-width: 768px) {
-  .cta-container {
-    bottom: 10vh;
-    height: 0;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    pointer-events: none;
-  }
-
-  .nav-tribute-button {
-    pointer-events: auto;
-    position: relative !important;
-    z-index: 9999 !important;
-  }
-}
-
-.nav-tribute-button {
-  padding: 12px 30px;
-  background: white;
-  color: black;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  border-radius: 30px;
-  font-size: 1rem;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  animation: fadeSlideIn 1.5s ease-out forwards;
-  animation-delay: 1s;
-  pointer-events: auto;
-}
-
-
-    /* ANIMATIONS */
-    @keyframes fadeSlideIn {
+    /* FADE IN ANIMATION */
+    @keyframes fadeIn {
       0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
       100% {
         opacity: 1;
@@ -152,99 +28,117 @@
       }
     }
 
-    /* MOBILE STYLES */
-    @media (max-width: 768px) {
-      .site-logo {
-        height: 32px;
-      }
+    /* NAVIGATION */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1.5rem;
+      z-index: 9999;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
 
-      .tribute-img-mobile {
+    .site-logo {
+      height: 36px;
+      position: absolute;
+      left: 16px;
+    }
+
+    .nav-button-center {
+      text-align: center;
+    }
+
+    .nav-tribute-button {
+      padding: 10px 22px;
+      background: white;
+      color: black;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 1s;
+      opacity: 0;
+    }
+
+    /* DESKTOP TRIBUTE */
+    .desktop-tribute {
+      display: none;
+    }
+
+    @media (min-width: 769px) {
+      .desktop-tribute {
         display: block;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('assets/diva-tribute-desktop.jpg'); /* Replace with your image */
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        animation: fadeIn 1.5s ease-out forwards;
+        animation-delay: 0.5s;
       }
 
-      .desktop-bg-wrapper {
+      .mobile-tribute {
         display: none;
       }
     }
 
-    /* DESKTOP STYLES */
-    @media (min-width: 769px) {
-      .desktop-bg-wrapper {
-        display: block;
-      }
+    /* MOBILE TRIBUTE */
+    .mobile-tribute {
+      margin-top: 70px; /* offset for fixed navbar */
+      width: 100%;
+      min-height: 100vh;
+      background: black;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
 
-      .tribute-img-mobile {
-        display: none;
-      }
+    .tribute-img-mobile {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Responsive logo & button tweak */
     @media (max-width: 768px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: black;
-    font-family: 'Lora', serif;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
+      .site-logo {
+        height: 30px;
+      }
 
-  .mobile-tribute {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: black;
-  }
-
-  .tribute-img-mobile {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .mobile-button-wrapper {
-    padding: 20px 0 50px; /* 👈 controls spacing BELOW image */
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background: black;
-  }
-
-  .nav-tribute-button {
-    padding: 12px 30px;
-    background: white;
-    color: black;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    border-radius: 30px;
-    font-size: 1rem;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-}
-
+      .nav-tribute-button {
+        font-size: 0.85rem;
+        padding: 8px 18px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVIGATION -->
   <nav class="site-nav">
     <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
+    <div class="nav-button-center">
+      <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
+    </div>
   </nav>
 
- <!-- TRIBUTE -->
-<div class="tribute-wrapper">
-  <!-- DESKTOP BG -->
-  <div class="desktop-bg-wrapper">
-    <div class="tribute-desktop-bg"></div>
+  <!-- DESKTOP TRIBUTE -->
+  <div class="desktop-tribute"></div>
+
+  <!-- MOBILE TRIBUTE -->
+  <div class="mobile-tribute">
+    <img class="tribute-img-mobile" src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
   </div>
-
-  <!-- MOBILE IMG -->
-  <img class="tribute-img-mobile" src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
-
-  <!-- CTA CENTERED -->
-  <section class="cta-container">
-    <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
-  </section>
-</div>
-
 
 </body>
 </html>
