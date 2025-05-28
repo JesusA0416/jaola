@@ -76,11 +76,18 @@
       z-index: 1;
     }
 
-    .nav-tribute-button {
-  position: fixed;
+    .cta-container {
+  position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none; /* optional: so clicks go through */
+}
+
+.nav-tribute-button {
   padding: 12px 30px;
   background: white;
   color: black;
@@ -90,10 +97,10 @@
   font-size: 1rem;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
   opacity: 0;
   animation: fadeSlideIn 1.5s ease-out forwards;
   animation-delay: 1s;
+  pointer-events: auto;
 }
 
 
@@ -143,20 +150,22 @@
     <img src="assets/jaola-logo.png" alt="JAOLA Logo" class="site-logo" />
   </nav>
 
-  <!-- TRIBUTE -->
-  <div class="tribute-wrapper">
-    <!-- DESKTOP -->
-    <div class="desktop-bg-wrapper">
-      <div class="tribute-desktop-bg"></div>
-    </div>
-
-    <!-- MOBILE -->
-    <img class="tribute-img-mobile" src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
-    <section>
-    <!-- CTA -->
-    <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
-    </section>
+ <!-- TRIBUTE -->
+<div class="tribute-wrapper">
+  <!-- DESKTOP BG -->
+  <div class="desktop-bg-wrapper">
+    <div class="tribute-desktop-bg"></div>
   </div>
+
+  <!-- MOBILE IMG -->
+  <img class="tribute-img-mobile" src="assets/diva-tribute.png" alt="Herminia María Castillo Tribute" />
+
+  <!-- CTA CENTERED -->
+  <section class="cta-container">
+    <a href="main.html" class="nav-tribute-button">Enter JAOLA</a>
+  </section>
+</div>
+
 
 </body>
 </html>
