@@ -78,13 +78,37 @@
 
     .cta-container {
   position: absolute;
-  bottom: 40px;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 1000;
-  pointer-events: none; /* optional: so clicks go through */
+  pointer-events: none;
+}
+
+/* DESKTOP – keep as is */
+@media (min-width: 769px) {
+  .cta-container {
+    bottom: 12vh;
+  }
+}
+
+/* MOBILE – override everything and FORCE visibility */
+@media (max-width: 768px) {
+  .cta-container {
+    bottom: 10vh;
+    height: 0;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    pointer-events: none;
+  }
+
+  .nav-tribute-button {
+    pointer-events: auto;
+    position: relative !important;
+    z-index: 9999 !important;
+  }
 }
 
 .nav-tribute-button {
